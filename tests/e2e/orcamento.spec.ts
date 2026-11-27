@@ -57,7 +57,11 @@ test.describe("orçamento", () => {
   });
 
   test("API: honeypot e envio rápido recebem 200 silencioso", async ({ request }) => {
-    const pass = await (await request.post("/api/orcamento/passe", { data: {} })).json();
+    const pass = await (
+      await request.post("/api/orcamento/passe", {
+        data: { turnstileToken: "XXXX.DUMMY.TOKEN.XXXX" },
+      })
+    ).json();
     const base = {
       schemaVersion: 1,
       campos: {
@@ -95,7 +99,11 @@ test.describe("orçamento", () => {
   });
 
   test("API: arquivo de host externo é recusado no servidor", async ({ request }) => {
-    const pass = await (await request.post("/api/orcamento/passe", { data: {} })).json();
+    const pass = await (
+      await request.post("/api/orcamento/passe", {
+        data: { turnstileToken: "XXXX.DUMMY.TOKEN.XXXX" },
+      })
+    ).json();
     const res = await request.post("/api/orcamento", {
       data: {
         schemaVersion: 1,
