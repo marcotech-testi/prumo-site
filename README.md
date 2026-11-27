@@ -47,5 +47,48 @@ Todo deploy que não for produção com `NEXT_PUBLIC_SITE_URL=https://www.prumop
 ## CSP
 Os cabeçalhos estão em `next.config.ts`. A CSP está em `Content-Security-Policy-Report-Only` no MVP. Para tornar obrigatória: acompanhar o console por alguns dias sem violações e trocar a chave para `Content-Security-Policy`.
 
+## Orçamento online (fluxo)
+1. A pessoa preenche `/orcamento` (validação zod no navegador, `src/lib/quote-schema.ts`).
+2. Ao enviar, o navegador chama `POST /api/orcamento/passe` com o token do Turnstile. O servidor verifica o token **uma vez** e devolve um passe assinado (HMAC, 30 min).
+3. Com o passe, cada arquivo vai **direto do navegador para o Vercel Blob** (`POST /api/orcamento/upload` emite um token temporário só para `orcamentos/{ano-mes}/{uuid}-{nome}`, tipos e tamanho restritos, sufixo aleatório).
+4. `POST /api/orcamento` recebe só as URLs. O servidor valida de novo com o mesmo schema, aplica o antispam (honeypot, tempo mínimo de 4 s, passe; bots recebem 200 silencioso), aceita apenas URLs do store de Blob do projeto, confere tipo e tamanho reais (`head`), envia o e-mail interno (Resend) e a confirmação ao cliente e dispara o webhook.
+5. Falha no e-mail interno → 502 e os dados continuam no formulário. Falha no webhook só é registrada.
+
+**Modo local:** sem `BLOB_READ_WRITE_TOKEN` e fora da Vercel, os arquivos vão para a pasta temporária do sistema (`/api/orcamento/upload-local`). Sem `RESEND_API_KEY`, os e-mails aparecem no console. Sem chave do Turnstile, a verificação é dispensada (só fora da Vercel).
+
 ## Integração com o sistema de orçamento
-O contrato completo do webhook (`schemaVersion: 1`) é documentado na tarefa T7 (ver `docs/05-orcamento-e-integracoes.md`).
+O sistema de orçamento e a IA de atendimento são outro projeto; este repositório só entrega o webhook.
+
+- Configure `QUOTE_WEBHOOK_URL` e `QUOTE_WEBHOOK_SECRET` (obrigatório quando há URL).
+- `POST` com `Content-Type: application/json`, timeout de 5 s e 2 tentativas.
+- Cabeçalhos:
+  - `X-Prumo-Signature: sha256=<hex>`: HMAC-SHA256 do **corpo bruto** com `QUOTE_WEBHOOK_SECRET`.
+  - `X-Prumo-Timestamp: <epoch em segundos>`.
+- Para validar: recalcule o HMAC sobre os bytes recebidos (antes de qualquer parse), compare em tempo constante e rejeite timestamps com mais de 5 minutos de diferença.
+
+Corpo (`schemaVersion: 1`):
+```json
+{
+  "schemaVersion": 1,
+  "id": "pq_0f8a…",
+  "receivedAt": "2026-11-27T16:40:00-03:00",
+  "perfil": "cliente",
+  "contato": { "nome": "", "whatsapp": "5541900000000", "email": null },
+  "local": { "cidade": "Curitiba", "bairro": "Batel" },
+  "espaco": { "tipo": "fachada_externa", "larguraM": 6, "alturaM": 3, "areaAproxM2": 18, "naoSeiMedidas": false },
+  "condicoes": { "sol": "meia_sombra", "pontoAgua": "sim" },
+  "prazo": "1_3_meses",
+  "mensagem": null,
+  "arquivos": [{ "url": "https://….public.blob.vercel-storage.com/…", "nome": "parede-1.jpg", "tipo": "image/jpeg", "tamanhoBytes": 2400000 }],
+  "origem": { "pagina": "/jardim-vertical", "referrer": null, "utm_source": null, "utm_medium": null, "utm_campaign": null, "utm_content": null, "utm_term": null, "gclid": null, "fbclid": null, "obra": null },
+  "consentimento": { "aceito": true, "politicaVersao": "2026-11-27", "em": "2026-11-27T16:40:00-03:00" }
+}
+```
+Valores possíveis: `perfil` = `cliente | arquiteto | construtora`; `espaco.tipo` = `fachada_externa | parede_interna | varanda | area_gourmet | empreendimento | outro`; `condicoes.sol` = `sol_pleno | meia_sombra | sombra | nao_sei`; `condicoes.pontoAgua` = `sim | nao | nao_sei`; `prazo` = `o_quanto_antes | 1_3_meses | planejando | sem_pressa | null`. Medidas ficam `null` quando `naoSeiMedidas` é `true`.
+
+Exemplo de verificação (Node):
+```js
+import { createHmac, timingSafeEqual } from "node:crypto";
+const expected = "sha256=" + createHmac("sha256", process.env.QUOTE_WEBHOOK_SECRET).update(rawBody).digest("hex");
+const ok = timingSafeEqual(Buffer.from(expected), Buffer.from(req.headers["x-prumo-signature"]));
+```
