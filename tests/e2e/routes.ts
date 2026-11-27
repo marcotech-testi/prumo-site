@@ -7,4 +7,5 @@ export const publicRoutes = [
   "/para-arquitetos",
   "/sobre",
   "/perguntas-frequentes",
+  "/privacidade",
 ];

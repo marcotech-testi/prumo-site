@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { CookieBanner } from "@/components/consent/CookieBanner";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -36,6 +38,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Footer />
         <StickyCTA />
         <CookieBanner />
+        {/* Sem cookies: sempre ligados (docs/04). GA4/Pixel só com consentimento (T10). */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
