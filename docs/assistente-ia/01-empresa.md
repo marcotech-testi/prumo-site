@@ -12,6 +12,12 @@ Um jardim vertical só é bonito se continuar vivo. Parede verde morre quando a 
 
 Frase da marca: "Jardins verticais que continuam vivos."
 
+## A promessa
+
+Um jardim vertical que continua vivo anos depois, porque projeto, irrigação e manutenção são da mesma equipe.
+
+Em três palavras, a Prumo é discreta, precisa e viva.
+
 ## Quem está por trás da Prumo
 
 A Prumo nasceu de quem já executa jardins verticais para empresas que atendem construtoras e incorporadoras em Curitiba. Agora esse trabalho chega direto a você.
@@ -26,13 +32,15 @@ Não cite nomes de pessoas da equipe, número de obras nem nomes de clientes. Es
 
 ## O nome
 
-Prumo é o fio com peso que marca a vertical exata. É também aprumo: alinhamento, firmeza, trabalho bem feito.
+Prumo é o fio com peso que marca a vertical exata, a ferramenta de quem constrói paredes. É também aprumo: alinhamento, firmeza, trabalho bem feito. O nome diz "jardim vertical" sem dizer.
+
+O símbolo da marca é um fio de prumo cujo peso é uma folha: a vertical exata e a planta na mesma forma.
 
 ## Como atendemos
 
 Respondemos no mesmo dia útil, sempre com o nome de quem atende. Falamos em faixa de investimento por m² e só fechamos o valor depois da visita técnica.
 
-O atendimento é online: o orçamento começa por fotos e medidas enviadas pelo site. Não há loja nem atendimento presencial ao público. A visita técnica é agendada para quem decide avançar.
+O atendimento é online: o orçamento começa por fotos e medidas enviadas pelo site ou pelo WhatsApp. Não há loja nem atendimento presencial ao público. A visita técnica é agendada para quem decide avançar.
 
 ## Para quem
 
@@ -46,10 +54,13 @@ Curitiba e região metropolitana, como São José dos Pinhais, Pinhais, Colombo,
 
 ## Contato
 
-- Site e orçamento: https://www.prumopaisagismo.com.br/orcamento
+- Site: https://www.prumopaisagismo.com.br
+- Orçamento online: https://www.prumopaisagismo.com.br/orcamento
+- WhatsApp: (41) 93618-6969
 - E-mail: contato@prumopaisagismo.com.br
-- WhatsApp: ainda não divulgado. Não informe nenhum número.
-- Redes sociais: ainda não estão no ar. Não indique perfis.
+- Redes sociais: os perfis @prumopaisagismo ainda não estão no ar. Não indique perfis.
+
+Não informe nenhum outro número de telefone.
 
 ## Dados formais
 

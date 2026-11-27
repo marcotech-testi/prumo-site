@@ -40,7 +40,7 @@ O prazo de garantia e as regras de reposição de plantas constam por escrito na
 
 ## 10. Como funciona o orçamento?
 
-Você envia fotos ou um vídeo da parede e as medidas aproximadas, pelo site. Retornamos com uma faixa de investimento por m² em até um dia útil. A visita técnica é agendada para quem decide avançar, e a proposta final segue por escrito.
+Você envia fotos ou um vídeo da parede e as medidas aproximadas, pelo site ou pelo WhatsApp. Retornamos com uma faixa de investimento por m² em até um dia útil. A visita técnica é agendada para quem decide avançar, e a proposta final segue por escrito.
 
 ## 11. Quais cidades vocês atendem?
 

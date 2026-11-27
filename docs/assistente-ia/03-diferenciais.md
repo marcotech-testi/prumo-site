@@ -1,5 +1,9 @@
 # Diferenciais: por que contratar a Prumo
 
+## A promessa
+
+Um jardim vertical que continua vivo anos depois, porque projeto, irrigação e manutenção são da mesma equipe.
+
 ## Os quatro motivos
 
 - **Uma equipe, do projeto à manutenção.** Quem desenha é quem instala e quem cuida depois. Ninguém empurra o problema para outro.

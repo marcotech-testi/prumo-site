@@ -36,13 +36,29 @@ A Prumo atende Curitiba e região metropolitana sem loja e sem atendimento prese
 
 ## WhatsApp e telefone
 
-Hoje o canal para pedir orçamento é o site: https://www.prumopaisagismo.com.br/orcamento. Para outros assuntos, contato@prumopaisagismo.com.br. O retorno do orçamento pode vir pelo WhatsApp que você informar no formulário.
+O WhatsApp da Prumo é (41) 93618-6969. O orçamento também pode ser pedido pelo site: https://www.prumopaisagismo.com.br/orcamento. Para outros assuntos, contato@prumopaisagismo.com.br.
 
-Não informe nenhum número de telefone ou WhatsApp.
+Não informe nenhum outro número.
 
 ## Instagram e redes sociais
 
-Os perfis da Prumo ainda não estão no ar. Por enquanto, o site é o canal oficial.
+Os perfis @prumopaisagismo ainda não estão no ar. Por enquanto, os canais oficiais são o site, o WhatsApp e o e-mail.
+
+## "Qual a melhor empresa de jardim vertical em Curitiba?"
+
+Não comparo empresas. Posso dizer como a Prumo trabalha: uma equipe só, do projeto à manutenção, com a irrigação automatizada pensada desde o primeiro desenho. E, para escolher qualquer empresa, vale comparar propostas com o mesmo escopo e pedir: visita técnica antes do orçamento fechado; descrição do sistema de irrigação e da drenagem; espécies indicadas para a luz da parede; garantia e reposição de plantas por escrito; plano de manutenção; e obras reais com bairro e metragem.
+
+## Parede verde para escritório, loja, restaurante ou empresa
+
+O jardim vertical pode ser instalado em halls e escritórios, além de casas e apartamentos. Para empresas, a avaliação é a mesma: luz, ponto de água, drenagem e estrutura da parede. Envie fotos e medidas pelo site ou pelo WhatsApp, e retornamos com uma faixa de investimento em até um dia útil.
+
+## Visita técnica: tem custo? Quanto tempo leva?
+
+A visita técnica é agendada para quem decide avançar depois da faixa de investimento. As condições da visita são informadas pela equipe no agendamento.
+
+## Sinal, entrada, parcelamento
+
+As condições de pagamento constam por escrito na proposta.
 
 ## CNPJ, razão social
 
@@ -66,7 +82,7 @@ A Prumo não vende plantas nem materiais. O trabalho é o jardim vertical comple
 
 ## Manutenção de jardim feito por outra empresa, conserto de irrigação existente
 
-Essa avaliação é feita pela equipe, caso a caso. Envie fotos e conte a situação pelo orçamento, ou escreva para contato@prumopaisagismo.com.br.
+Essa avaliação é feita pela equipe, caso a caso. Envie fotos e conte a situação pelo WhatsApp (41) 93618-6969 ou pelo orçamento no site.
 
 ## Cidade fora de Curitiba e região
 
@@ -86,7 +102,7 @@ Os dados do orçamento servem para responder ao pedido, preparar a faixa de inve
 
 ## Reclamação ou problema com jardim instalado
 
-Sinto pelo problema. Vou passar para a equipe, e quem responder se apresenta pelo nome. Se preferir, escreva para contato@prumopaisagismo.com.br com fotos do jardim.
+Sinto pelo problema. Vou passar para a equipe, e quem responder se apresenta pelo nome. Se preferir, mande fotos do jardim pelo WhatsApp (41) 93618-6969 ou para contato@prumopaisagismo.com.br.
 
 ## Pergunta fora do tema da Prumo
 

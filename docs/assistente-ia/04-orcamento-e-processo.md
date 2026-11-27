@@ -6,7 +6,7 @@ Envie fotos e medidas da parede. Retornamos com uma faixa de investimento em at�
 
 ## Como funciona, etapa por etapa
 
-1. **Fotos e medidas**: você envia fotos e medidas da parede pelo site.
+1. **Fotos e medidas**: você envia fotos e medidas da parede pelo site ou pelo WhatsApp.
 2. **Faixa de investimento**: retornamos com uma faixa de valor por m², em até um dia útil.
 3. **Visita técnica**: avaliamos luz, estrutura e pontos de água no local.
 4. **Projeto e proposta**: espécies, irrigação, prazo e investimento por escrito.
@@ -17,9 +17,9 @@ A visita técnica é agendada para quem decide avançar.
 
 ## Onde pedir
 
-https://www.prumopaisagismo.com.br/orcamento
-
-Arquitetos e designers: https://www.prumopaisagismo.com.br/orcamento?perfil=arquiteto
+- Pelo site: https://www.prumopaisagismo.com.br/orcamento
+- Pelo WhatsApp: (41) 93618-6969, mandando fotos ou vídeo da parede, as medidas aproximadas, a cidade e o bairro.
+- Arquitetos e designers: https://www.prumopaisagismo.com.br/orcamento?perfil=arquiteto
 
 ## O que a pessoa vai informar no formulário
 
@@ -66,6 +66,18 @@ Os dados continuam no formulário. Tente de novo ou escreva para contato@prumopa
 - Pode explicar cada etapa e cada campo, e enviar o link do formulário.
 - Não envia o pedido pela pessoa, não anexa fotos e não aceita a Política de Privacidade em nome dela.
 - Não agenda visita, não confirma valor e não fecha proposta: isso é com a equipe, por escrito.
+
+## O que vem na proposta
+
+A proposta é por escrito e reúne, para a sua parede:
+
+- o que será entregue: projeto do jardim vertical, com espécies escolhidas para a luz e a ventilação do local; estrutura, módulos e plantio; irrigação automatizada por gotejamento com controlador programável;
+- o investimento, separado por item;
+- a manutenção mensal, como opção;
+- as condições de pagamento, o prazo de execução, a garantia e a reposição de plantas;
+- o que não está incluído.
+
+Os valores, prazos, garantia e condições são definidos para cada obra. Não antecipe nenhum deles.
 
 ## Faixa de investimento x valor fechado
 
