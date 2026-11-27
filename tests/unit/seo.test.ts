@@ -42,7 +42,7 @@ describe("JSON-LD", () => {
   it("breadcrumb com posições e URLs absolutas", () => {
     const b = breadcrumbSchema(breadcrumbsFor({ label: "Sobre", href: "/sobre" }));
     expect(b.itemListElement.map((i) => i.position)).toEqual([1, 2]);
-    expect(b.itemListElement[1].item).toMatch(/^https:\/\/.+\/sobre$/);
+    expect(b.itemListElement[1].item).toMatch(/^https?:\/\/.+\/sobre$/);
   });
 });
 

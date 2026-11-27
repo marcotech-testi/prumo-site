@@ -46,7 +46,7 @@ Não lidas: modelo financeiro (interno), resultados brutos das IAs e o PDF de pr
 
 ## Divergências entre documentos (decida e me avise se quiser mudar)
 
-1. **WhatsApp.** `docs/08` diz que o WhatsApp comercial ainda não existe; o manual, a apresentação e o README da pasta trazem **(41) 93618-6969** como definitivo. A base usa esse número. Se ele ainda não estiver ativo no WhatsApp Business, remova-o dos arquivos `00`, `01`, `04`, `06` e `07` até ativar. Atualize também `docs/08` e a variável `NEXT_PUBLIC_WHATSAPP` do site.
+1. **WhatsApp (resolvido).** O **(41) 93618-6969** está ativo para clientes, confirmado pelo Marco em 27/11/2026, e a base usa esse número. Falta acertar o site: `docs/08` ainda diz que o WhatsApp não existe, e a variável `NEXT_PUBLIC_WHATSAPP` na Vercel deve receber `5541936186969`.
 2. **Paisagismo.** A apresentação lista "Paisagismo: projeto e execução de jardins, varandas e áreas externas" como serviço. O site e `docs/00` tratam como "sob consulta, caso a caso". A base segue o site.
 3. **Obras reais.** A apresentação diz "Mais obras em @prumopaisagismo", mas as redes ainda não existem. A base não indica perfis.
 
