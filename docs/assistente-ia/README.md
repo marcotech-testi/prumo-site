@@ -4,6 +4,22 @@ Documentação para alimentar o assistente que responde dúvidas do público sob
 
 **Este README é interno. Não entregue ao assistente.** Entregue os arquivos `00` a `07`.
 
+## Canal
+
+O assistente atende o WhatsApp oficial **(41) 93618-6969**: todo mundo que escreve para esse número conversa primeiro com ele. Por isso, ele:
+
+- nunca manda a pessoa "chamar no WhatsApp";
+- recebe o pedido de orçamento na própria conversa (fotos, medidas, luz, água, cidade e bairro, nome), pede o consentimento à pessoa e passa para a equipe;
+- reconhece as mensagens prontas que o site envia (`docs/07`, "Mensagens de WhatsApp") e segue o assunto de cada uma.
+
+### O que a plataforma do assistente precisa ter (configuração, fora destes arquivos)
+
+- **Transferência para humano** ("passar para a equipe"): o prompt manda transferir, mas o mecanismo é da plataforma. Sem ele, o pedido não chega a ninguém.
+- **Receber imagens, vídeo e PDF** e deixar os arquivos visíveis para a equipe.
+- **Registro do consentimento** (o "sim" da pessoa, com data) junto do pedido, para a LGPD.
+- Idealmente, os mesmos campos do formulário do site (contrato do webhook em `docs/05`), para os pedidos do WhatsApp e do site chegarem no mesmo formato.
+- Se a plataforma tiver horário de atendimento humano, a mensagem de transferência já diz "em horário comercial".
+
 ## Arquivos
 
 | Arquivo | Para que serve | Como entregar ao agente |

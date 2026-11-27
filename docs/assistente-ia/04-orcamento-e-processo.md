@@ -6,7 +6,7 @@ Envie fotos e medidas da parede. Retornamos com uma faixa de investimento em at�
 
 ## Como funciona, etapa por etapa
 
-1. **Fotos e medidas**: você envia fotos e medidas da parede pelo site ou pelo WhatsApp.
+1. **Fotos e medidas**: você envia fotos e medidas da parede aqui no WhatsApp ou pelo site.
 2. **Faixa de investimento**: retornamos com uma faixa de valor por m², em até um dia útil.
 3. **Visita técnica**: avaliamos luz, estrutura e pontos de água no local.
 4. **Projeto e proposta**: espécies, irrigação, prazo e investimento por escrito.
@@ -17,11 +17,11 @@ A visita técnica é agendada para quem decide avançar.
 
 ## Onde pedir
 
-- Pelo site: https://www.prumopaisagismo.com.br/orcamento
-- Pelo WhatsApp: (41) 93618-6969, mandando fotos ou vídeo da parede, as medidas aproximadas, a cidade e o bairro.
-- Arquitetos e designers: https://www.prumopaisagismo.com.br/orcamento?perfil=arquiteto
+- **Aqui no WhatsApp**: a pessoa manda fotos ou vídeo da parede e as informações nesta conversa. O assistente recebe e passa para a equipe (veja o fluxo nas instruções).
+- **Pelo site**, se preferir: https://www.prumopaisagismo.com.br/orcamento
+- **Arquitetos e designers, pelo site**: https://www.prumopaisagismo.com.br/orcamento?perfil=arquiteto
 
-## O que a pessoa vai informar no formulário
+## O que é pedido no orçamento (no site e nesta conversa)
 
 Sobre a parede:
 
@@ -36,10 +36,10 @@ Sobre a parede:
 
 Contato:
 
-- Nome, WhatsApp, e-mail (opcional), cidade e bairro.
+- Nome, WhatsApp (no WhatsApp, é o próprio número da conversa), e-mail (opcional), cidade e bairro.
 - Concordância com o uso dos dados para receber o orçamento, conforme a Política de Privacidade.
 
-Limites de arquivos: até 6 arquivos; fotos JPG, PNG, WebP ou HEIC de até 10 MB cada; no máximo um vídeo MP4 ou MOV de até 100 MB; total de 150 MB.
+Limites de arquivos no formulário do site: até 6 arquivos; fotos JPG, PNG, WebP ou HEIC de até 10 MB cada; no máximo um vídeo MP4 ou MOV de até 100 MB; total de 150 MB.
 
 ## Dicas para boas fotos
 
@@ -57,14 +57,15 @@ Limites de arquivos: até 6 arquivos; fotos JPG, PNG, WebP ou HEIC de até 10 MB
 
 Quem responder se apresenta pelo nome. Se a pessoa informou e-mail, recebe uma confirmação de que o pedido chegou.
 
-## Se o envio falhar
+## Se o envio pelo site falhar
 
-Os dados continuam no formulário. Tente de novo ou escreva para contato@prumopaisagismo.com.br.
+Os dados continuam no formulário. Tente de novo, mande as fotos e medidas nesta conversa ou escreva para contato@prumopaisagismo.com.br.
 
 ## O que o assistente pode e não pode fazer no orçamento
 
-- Pode explicar cada etapa e cada campo, e enviar o link do formulário.
-- Não envia o pedido pela pessoa, não anexa fotos e não aceita a Política de Privacidade em nome dela.
+- Pode explicar cada etapa, receber fotos, vídeo e informações nesta conversa e passar o pedido para a equipe.
+- Pede a concordância com a Política de Privacidade à própria pessoa; nunca considera aceita sem um "sim" dela.
+- Não calcula nem antecipa faixa de investimento, nem olhando as fotos.
 - Não agenda visita, não confirma valor e não fecha proposta: isso é com a equipe, por escrito.
 
 ## O que vem na proposta

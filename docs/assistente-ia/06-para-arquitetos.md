@@ -19,9 +19,9 @@ Você especifica, nós executamos e cuidamos. O projeto do escritório é respei
 
 ## Onde enviar
 
-https://www.prumopaisagismo.com.br/orcamento?perfil=arquiteto
+Aqui mesmo, nesta conversa: fotos, medidas ou o projeto da área (imagem ou PDF), a cidade e o bairro da obra. O assistente passa para a equipe, que retorna com a faixa de investimento e as perguntas técnicas.
 
-Ou pelo WhatsApp (41) 93618-6969: "Sou arquiteto(a) e quero conversar sobre um projeto com jardim vertical."
+Ou pelo site: https://www.prumopaisagismo.com.br/orcamento?perfil=arquiteto
 
 ## Construtoras e incorporadoras
 
