@@ -1,0 +1,39 @@
+# 08 — Pendências do Marco (o Claude Code usa placeholders e segue; nada aqui bloqueia o desenvolvimento)
+
+Marque cada item quando concluir. "Bloqueia go-live" = o site só vai ao ar com o item resolvido.
+
+## Contas e chaves (criar e entregar como variáveis de ambiente na Vercel — nunca colar no chat nem no git)
+- [ ] **Vercel**: conta/time com plano que permita **uso comercial** (o plano gratuito é para uso não comercial; confirmar), projeto ligado ao repositório. *Bloqueia go-live.*
+- [ ] **Resend**: criar conta, verificar o domínio `prumopaisagismo.com.br` (adicionar os registros DNS que o Resend mostrar: SPF/DKIM), gerar `RESEND_API_KEY`. *Bloqueia go-live.*
+- [ ] **Cloudflare Turnstile**: criar widget para `www.prumopaisagismo.com.br` e para localhost/previews → `NEXT_PUBLIC_TURNSTILE_SITE_KEY` e `TURNSTILE_SECRET_KEY`. *Bloqueia go-live.*
+- [ ] **Vercel Blob**: criar o store no projeto (gera `BLOB_READ_WRITE_TOKEN`). *Bloqueia go-live.*
+- [ ] **GA4** (`NEXT_PUBLIC_GA_ID`) e **Meta Pixel** (`NEXT_PUBLIC_META_PIXEL_ID`), antes de ligar o tráfego pago.
+- [ ] **Google Search Console**: criar a propriedade de **domínio** `prumopaisagismo.com.br` e verificar por registro TXT no DNS (reserva: meta em `NEXT_PUBLIC_GSC_VERIFICATION`). No go-live: enviar `https://www.prumopaisagismo.com.br/sitemap.xml`, inspecionar e pedir indexação da home e de `/jardim-vertical`. *Bloqueia go-live.*
+- [ ] **Bing Webmaster Tools**: importar do Search Console ou verificar (`NEXT_PUBLIC_BING_VERIFICATION`); gerar uma chave **IndexNow** (qualquer string hexadecimal de 8–128 caracteres) → `INDEXNOW_KEY` na Vercel e no GitHub Actions.
+- [ ] **Perfil da Empresa no Google** (atendimento em área, sem endereço visível; nome só "Prumo Paisagismo", sem empilhar palavras-chave; categoria de paisagismo; área de atendimento Curitiba e RMC) → URL em `NEXT_PUBLIC_GBP_URL`. Pedir avaliação a cada obra entregue.
+- [ ] **GA4**: marcar `submit_quote` como evento-chave (conversão) e vincular GA4 ↔ Search Console (e ↔ Google Ads, se for anunciar).
+- [ ] **WebMCP (teste de origem do Chrome)**: registrar `https://www.prumopaisagismo.com.br` em https://developer.chrome.com/origintrials (WebMCP) e entregar o token em `NEXT_PUBLIC_WEBMCP_OT_TOKEN`. Sem token as ferramentas só funcionam em Chrome com a flag.
+- [ ] **Firewall da Vercel**: regra de limite de taxa para `/mcp` e `/api/*` (ex.: 60 requisições/min por IP).
+
+## Domínio e e-mail
+- [ ] **E-mail contato@**: configurar o MX no Registro.br (hoje o MX está nulo e o e-mail recusa mensagens). Até lá, definir `QUOTE_TO_EMAIL` com um e-mail que funcione. *Bloqueia go-live (os clientes vão escrever para esse endereço).*
+- [ ] **DNS do site** (só no go-live): `www` → CNAME para a Vercel; apex redireciona para `www` (o Claude Code entrega o roteiro na T12).
+- [ ] Publicar a imagem de assinatura de e-mail (já servida pelo site em `/assinatura/assinatura-logo-480px.png`).
+
+## Conteúdo e dados
+- [ ] **WhatsApp comercial** (esposa define): número no formato `5541…` em `NEXT_PUBLIC_WHATSAPP`. Trocar também o exemplo (41) 9 0000-0000 no cartão, assinatura, timbrado, orçamento e apresentação. *Bloqueia go-live.*
+- [ ] **≥ 3 obras reais do parceiro** com autorização de uso (cliente e parceiro): fotos (jardim inteiro, detalhe, escala, **irrigação**), bairro, metragem, espécies, tipo de irrigação, ano, prazo. Entregar em `src/content/obras/` + `public/obras/`. *Bloqueia go-live.*
+- [ ] **Razão social e CNPJ** que operam o site (`NEXT_PUBLIC_LEGAL_NAME`) e **revisão jurídica da `/privacidade`** (minuta). *Bloqueia go-live.*
+- [ ] **Parceiro de execução revisa** os trechos `REVISAR-PARCEIRO` (estrutura/drenagem, clima, umidade/impermeabilização, irrigação sem ponto de água) — lista no PR da T4. *Bloqueia go-live.*
+- [ ] **Decidir se publica faixa de preço** (`siteConfig.priceRange`): hoje não publica; o ticket do modelo (R$ 1.800/m²) só se valida com os primeiros orçamentos.
+- [ ] **Prazo e garantia** reais (jurídico + parceiro): hoje o site diz que constam por escrito na proposta.
+- [ ] Validar a assinatura "Verde no prumo" (hoje não é usada no site).
+
+## Marca e redes
+- [ ] **Busca de marca no INPI** (classes de paisagismo e instalação) com o jurídico. Até lá, sem ® ou ™.
+- [ ] Criar **@prumopaisagismo** no Instagram, TikTok e YouTube; depois definir `NEXT_PUBLIC_SOCIAL_LIVE=true`. Bio: "Jardins verticais e paisagismo com irrigação automatizada | Curitiba. Orçamento pelo link." Link da bio: `https://www.prumopaisagismo.com.br/orcamento?utm_source=instagram&utm_medium=bio`.
+- [ ] 9 a 12 posts de obras reais no Instagram antes de ligar o tráfego pago.
+
+## Ambiente de desenvolvimento
+- [ ] Rodar `preparar-repo.ps1` (cria `C:\dev\prumo-site` e copia instruções e ativos). Autenticar o Git no GitHub na máquina.
+- [ ] Autorizar o Claude Code a rodar `pnpm`, `git`, `gh` e `vercel` no clone.
