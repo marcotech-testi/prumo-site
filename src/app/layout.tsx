@@ -56,10 +56,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <CookieBanner />
         <Attribution />
         <WebMcp obras={obrasResumo()} />
-        {/* Sem cookies: sempre ligados (docs/04). GA4/Pixel só com consentimento (T10). */}
-        <Analytics />
+        {/* GA4/Pixel só com consentimento (T10). */}
         <ConsentAnalytics />
-        <SpeedInsights />
+        {/* Sem cookies: sempre ligados na Vercel (docs/04); fora dela os scripts não existem. */}
+        {process.env.VERCEL ? (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
       </body>
     </html>
   );

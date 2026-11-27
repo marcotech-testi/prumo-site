@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "numberOfRuns": 2,
+      "numberOfRuns": 3,
       "url": [
         "http://localhost:3100/",
         "http://localhost:3100/jardim-vertical",
