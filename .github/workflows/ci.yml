@@ -30,6 +30,9 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - run: pnpm check:contrast
+      - run: pnpm check:copy
+      - name: check:placeholders (modo aviso)
+        run: pnpm check:placeholders
       - name: check:seo (contra next start)
         run: |
           pnpm start -p 3100 &
@@ -37,6 +40,13 @@ jobs:
           pnpm check:seo http://localhost:3100
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test:e2e
+      - name: Lighthouse CI (mobile)
+        run: pnpm lhci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse
+          path: lhci-report
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

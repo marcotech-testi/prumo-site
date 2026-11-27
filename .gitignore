@@ -19,3 +19,5 @@ npm-debug.log*
 
 # chave IndexNow gerada no build
 public/*.txt
+lhci-report
+.lighthouseci

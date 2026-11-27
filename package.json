@@ -16,7 +16,10 @@
     "check:contrast": "tsx scripts/check-contrast.ts",
     "prebuild": "tsx scripts/build-lastmod.ts && tsx scripts/build-indexnow-key.ts",
     "check:seo": "tsx scripts/check-seo.ts",
-    "indexnow": "tsx scripts/indexnow.ts"
+    "indexnow": "tsx scripts/indexnow.ts",
+    "check:placeholders": "tsx scripts/check-placeholders.ts",
+    "check:copy": "tsx scripts/check-copy.ts",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
@@ -34,6 +37,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.1",
+    "@lhci/cli": "^0.16.1",
     "@playwright/test": "^1.65.1",
     "@tailwindcss/turbopack": "4.3.3",
     "@types/node": "^20",
