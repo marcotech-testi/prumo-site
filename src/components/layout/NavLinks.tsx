@@ -15,7 +15,7 @@ export function NavLinks({
 }) {
   const pathname = usePathname();
   return (
-    <ul className={vertical ? "flex flex-col" : "flex items-center gap-6"}>
+    <ul className={vertical ? "flex flex-col" : "flex items-center gap-5"}>
       {items.map((item) => {
         const current = pathname === item.href || pathname.startsWith(`${item.href}/`);
         return (
@@ -27,7 +27,7 @@ export function NavLinks({
               className={
                 vertical
                   ? "t-expanded block py-4 text-xl font-medium text-floresta"
-                  : `text-[0.9375rem] text-basalto underline-offset-8 hover:text-floresta hover:underline ${current ? "text-floresta underline decoration-1" : ""}`
+                  : `text-[0.9375rem] whitespace-nowrap text-basalto underline-offset-8 hover:text-floresta hover:underline ${current ? "text-floresta underline decoration-1" : ""}`
               }
             >
               {item.label}

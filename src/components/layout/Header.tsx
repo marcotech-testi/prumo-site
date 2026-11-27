@@ -19,7 +19,7 @@ export function Header() {
       >
         {globals.skipToContent}
       </a>
-      <Container className="flex h-[72px] items-center justify-between gap-6">
+      <Container className="flex h-[72px] items-center justify-between gap-6 xl:max-w-[1360px]">
         <Link href="/" aria-label={`${globals.homeLabel} — Prumo Paisagismo`} className="shrink-0">
           <Logo />
         </Link>
@@ -27,8 +27,8 @@ export function Header() {
           <NavLinks items={items} />
         </nav>
         <div className="hidden items-center gap-3 xl:flex">
-          <WhatsappButton variant="secondary" className="min-h-11 px-4" />
-          <ButtonLink href="/orcamento" className="min-h-11 px-5">
+          <WhatsappButton variant="secondary" className="min-h-11 px-4 whitespace-nowrap" />
+          <ButtonLink href="/orcamento" className="min-h-11 px-5 whitespace-nowrap">
             {globals.ctaPrimary}
           </ButtonLink>
         </div>

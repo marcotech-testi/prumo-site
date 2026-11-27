@@ -14,6 +14,7 @@ const serverSchema = z
     QUOTE_TO_EMAIL: optional,
     QUOTE_FROM_EMAIL: optional,
     BLOB_READ_WRITE_TOKEN: optional,
+    BLOB_STORE_ID: optional,
     INDEXNOW_KEY: optional,
     QUOTE_WEBHOOK_URL: optional,
     QUOTE_WEBHOOK_SECRET: optional,
@@ -26,15 +27,17 @@ const serverSchema = z
       });
     }
     if (isProd) {
-      for (const key of [
-        "TURNSTILE_SECRET_KEY",
-        "RESEND_API_KEY",
-        "QUOTE_TO_EMAIL",
-        "QUOTE_FROM_EMAIL",
-        "BLOB_READ_WRITE_TOKEN",
-      ] as const) {
+      // QUOTE_FROM_EMAIL é opcional: sem ele, o remetente é onboarding@resend.dev (lib/mail.ts).
+      for (const key of ["TURNSTILE_SECRET_KEY", "RESEND_API_KEY", "QUOTE_TO_EMAIL"] as const) {
         if (!env[key])
           ctx.addIssue({ code: "custom", message: `${key} é obrigatório em produção` });
+      }
+      // Blob: token de leitura/escrita (stores antigos) ou BLOB_STORE_ID com OIDC (stores novos).
+      if (!env.BLOB_READ_WRITE_TOKEN && !env.BLOB_STORE_ID) {
+        ctx.addIssue({
+          code: "custom",
+          message: "BLOB_STORE_ID ou BLOB_READ_WRITE_TOKEN é obrigatório em produção",
+        });
       }
     }
   });
