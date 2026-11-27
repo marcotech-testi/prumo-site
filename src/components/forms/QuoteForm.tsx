@@ -272,11 +272,11 @@ export function QuoteForm({ mode }: { mode: "blob" | "local" }) {
           }),
         );
       }
-      const { upload } = await import("@vercel/blob/client");
+      const { uploadPresigned } = await import("@vercel/blob/client");
       const { uploadPathFor } = await import("@/lib/blob");
       return Promise.all(
         files.map(async ({ file }) => {
-          const blob = await upload(uploadPathFor(file.name, crypto.randomUUID()), file, {
+          const blob = await uploadPresigned(uploadPathFor(file.name, crypto.randomUUID()), file, {
             access: "public",
             handleUploadUrl: "/api/orcamento/upload",
             clientPayload: JSON.stringify({ passe }),

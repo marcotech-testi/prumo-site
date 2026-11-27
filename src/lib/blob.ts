@@ -1,12 +1,18 @@
 /** Modo de upload: Vercel Blob (produção/preview) ou local (dev/testes sem token, fora da Vercel). */
 export function uploadMode(): "blob" | "local" {
-  return process.env.BLOB_READ_WRITE_TOKEN || process.env.VERCEL ? "blob" : "local";
+  return process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID || process.env.VERCEL
+    ? "blob"
+    : "local";
 }
 
 export const LOCAL_BLOB_PREFIX = "http://localhost/__local-blob/";
 
-/** Id do store a partir do token (vercel_blob_rw_<storeId>_<segredo>). */
+/** Id do store: BLOB_STORE_ID (OIDC) ou extraído do token (vercel_blob_rw_<storeId>_<segredo>). */
 function storeId() {
+  const fromEnv = process.env.BLOB_STORE_ID?.trim()
+    .toLowerCase()
+    .replace(/^store_/, "");
+  if (fromEnv) return fromEnv;
   const m = (process.env.BLOB_READ_WRITE_TOKEN ?? "").match(/^vercel_blob_rw_([a-z0-9]+)_/i);
   return m?.[1]?.toLowerCase() ?? null;
 }

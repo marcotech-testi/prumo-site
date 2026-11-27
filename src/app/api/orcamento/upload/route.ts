@@ -1,4 +1,5 @@
-import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
+import { issueSignedToken } from "@vercel/blob";
+import { handleUploadPresigned, type HandleUploadPresignedBody } from "@vercel/blob/client";
 import { NextResponse } from "next/server";
 import { verifyPass } from "@/lib/antispam";
 import { UPLOAD_PATH_RE } from "@/lib/blob";
@@ -6,14 +7,18 @@ import { allowedFileTypes, FILE_LIMITS } from "@/lib/quote-schema";
 
 export const runtime = "nodejs";
 
-/** Emite token temporário para upload direto do navegador ao Vercel Blob. */
+/**
+ * Upload direto do navegador ao Vercel Blob por URL pré-assinada.
+ * Funciona com OIDC (BLOB_STORE_ID, padrão dos stores novos) ou com BLOB_READ_WRITE_TOKEN.
+ * O token é limitado ao caminho do arquivo, à operação `put`, aos tipos e ao tamanho permitidos.
+ */
 export async function POST(req: Request) {
-  const body = (await req.json()) as HandleUploadBody;
+  const body = (await req.json()) as HandleUploadPresignedBody;
   try {
-    const result = await handleUpload({
+    const result = await handleUploadPresigned({
       body,
       request: req,
-      onBeforeGenerateToken: async (pathname, clientPayload) => {
+      getSignedToken: async (pathname, clientPayload) => {
         let passe: string | undefined;
         try {
           passe = (JSON.parse(clientPayload ?? "{}") as { passe?: string }).passe;
@@ -22,11 +27,22 @@ export async function POST(req: Request) {
         }
         if (!verifyPass(passe)) throw new Error("passe inválido");
         if (!UPLOAD_PATH_RE.test(pathname)) throw new Error("caminho inválido");
-        return {
+        const validUntil = Date.now() + 30 * 60 * 1000;
+        const token = await issueSignedToken({
+          pathname,
+          operations: ["put"],
+          validUntil,
           allowedContentTypes: allowedFileTypes,
           maximumSizeInBytes: FILE_LIMITS.maxVideoBytes,
-          addRandomSuffix: true,
-          validUntil: Date.now() + 30 * 60 * 1000,
+        });
+        return {
+          token,
+          urlOptions: {
+            validUntil,
+            allowedContentTypes: allowedFileTypes,
+            maximumSizeInBytes: FILE_LIMITS.maxVideoBytes,
+            addRandomSuffix: true,
+          },
         };
       },
     });
