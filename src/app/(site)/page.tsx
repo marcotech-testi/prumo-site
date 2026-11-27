@@ -11,6 +11,8 @@ import { getPublishedObras } from "@/content/obras";
 import { ObraCard } from "@/components/sections/ObraCard";
 import { home } from "@/content/pages";
 import { pageMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { faqSchema } from "@/lib/schema";
 
 export const metadata = pageMetadata(home);
 
@@ -19,6 +21,7 @@ export default function HomePage() {
   const showObras = obras.length > 0;
   return (
     <>
+      <JsonLd data={faqSchema([...home.faq.ids])} />
       <Hero {...home.hero} whatsapp={home.whatsapp} />
 
       <div className="border-b border-basalto/15 bg-pedra">

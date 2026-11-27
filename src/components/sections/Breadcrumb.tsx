@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { globals } from "@/content/globals";
-
-export type Crumb = { label: string; href: string };
+import Link from "next/link";
+import type { Crumb } from "@/lib/breadcrumbs";
 
 /** Trilha visível (igual ao JSON-LD BreadcrumbList). */
 export function Breadcrumb({ items }: { items: Crumb[] }) {

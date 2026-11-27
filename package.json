@@ -13,7 +13,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "build:assets": "tsx scripts/build-assets.ts",
-    "check:contrast": "tsx scripts/check-contrast.ts"
+    "check:contrast": "tsx scripts/check-contrast.ts",
+    "prebuild": "tsx scripts/build-lastmod.ts && tsx scripts/build-indexnow-key.ts",
+    "check:seo": "tsx scripts/check-seo.ts",
+    "indexnow": "tsx scripts/indexnow.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
@@ -38,6 +41,7 @@
     "@vitejs/plugin-react": "^6.3.0",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "node-html-parser": "^9.0.7",
     "prettier": "^3.10.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "sharp": "^0.35.5",

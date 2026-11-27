@@ -32,8 +32,46 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        // Versões Markdown (docs/09): /index.md, /{rota}.md e Accept: text/markdown.
+        { source: "/index.md", destination: "/md" },
+        { source: "/:path((?!md/|api/|_next/).+)\\.md", destination: "/md/:path" },
+        {
+          source: "/",
+          has: [{ type: "header", key: "accept", value: "(.*)text/markdown(.*)" }],
+          destination: "/md",
+        },
+        {
+          source: "/:path((?!md/|api/|_next/|mcp)[^.]+)",
+          has: [{ type: "header", key: "accept", value: "(.*)text/markdown(.*)" }],
+          destination: "/md/:path",
+        },
+      ],
+      afterFiles: [{ source: "/mcp", destination: "/api/mcp" }],
+      fallback: [],
+    };
+  },
   async headers() {
-    const headers = [{ source: "/:path*", headers: securityHeaders }];
+    const headers = [
+      { source: "/:path*", headers: securityHeaders },
+      // Páginas HTML anunciam a versão Markdown e variam por Accept.
+      {
+        source: "/",
+        headers: [
+          { key: "Vary", value: "Accept" },
+          { key: "Link", value: '</index.md>; rel="alternate"; type="text/markdown"' },
+        ],
+      },
+      {
+        source: "/:path((?!api/|_next/|md/|brand/|fonts/|obras/_|assinatura/)[^.]+)",
+        headers: [
+          { key: "Vary", value: "Accept" },
+          { key: "Link", value: '</:path.md>; rel="alternate"; type="text/markdown"' },
+        ],
+      },
+    ];
     if (!isProductionDomain) {
       headers.push({
         source: "/:path*",

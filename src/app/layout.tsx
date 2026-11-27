@@ -7,12 +7,19 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { StickyCTA } from "@/components/layout/StickyCTA";
 import { siteConfig } from "@/content/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { businessSchema, websiteSchema } from "@/lib/schema";
+import { robotsMetadata, verificationMetadata } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: siteConfig.name,
   description: siteConfig.descriptor,
+  applicationName: siteConfig.name,
+  robots: robotsMetadata,
+  verification: verificationMetadata(),
+  openGraph: { locale: "pt_BR", siteName: siteConfig.name, type: "website" },
 };
 
 export const viewport: Viewport = {
@@ -32,6 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body className="flex min-h-dvh flex-col">
+        <JsonLd data={[businessSchema(), websiteSchema()]} />
         <Header />
         <main id="conteudo" tabIndex={-1} className="flex-1 outline-none">
           {children}

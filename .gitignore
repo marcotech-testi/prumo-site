@@ -16,3 +16,6 @@ next-env.d.ts
 npm-debug.log*
 .pnpm-debug.log*
 .claude
+
+# chave IndexNow gerada no build
+public/*.txt

@@ -15,7 +15,9 @@ export const privacidade = {
   path: "/privacidade",
   label: "Privacidade",
   title: "Política de Privacidade e Cookies | Prumo",
-  description: "Como a Prumo trata seus dados e cookies.",
+  // Texto novo: a descrição do docs/04 tinha 40 caracteres (mínimo do check:seo é 70).
+  description:
+    "Como a Prumo trata seus dados e cookies: o que coletamos, para que usamos, por quanto tempo guardamos e seus direitos.",
   h1: "Política de Privacidade e Cookies",
   updatedLabel: "Atualizada em:",
   updatedAt: "27 de novembro de 2026",

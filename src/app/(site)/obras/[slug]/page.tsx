@@ -6,7 +6,10 @@ import { SpecSheet } from "@/components/ui/SpecSheet";
 import { Breadcrumb } from "@/components/sections/Breadcrumb";
 import { CtaFinal } from "@/components/sections/CtaFinal";
 import { ObraGallery } from "@/components/sections/ObraGallery";
-import { globals } from "@/content/globals";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { ViewObra } from "@/components/analytics/ViewObra";
+import { breadcrumbsFor } from "@/lib/breadcrumbs";
+import { breadcrumbSchema, obraSchema } from "@/lib/schema";
 import { getObra, getPublishedObras } from "@/content/obras";
 import { defaultCta } from "@/content/pages/cta";
 import { obraDescription, obraSpecRows, obrasPage, obraTitle } from "@/content/pages/obras";
@@ -33,17 +36,17 @@ export async function generateMetadata({ params }: PageProps<"/obras/[slug]">): 
 export default async function ObraPage({ params }: PageProps<"/obras/[slug]">) {
   const obra = getObra((await params).slug);
   if (!obra) notFound();
+  const crumbs = breadcrumbsFor(
+    { label: obrasPage.label, href: obrasPage.path },
+    { label: obra.titulo, href: `/obras/${obra.slug}` },
+  );
   return (
     <>
+      <JsonLd data={[breadcrumbSchema(crumbs), obraSchema(obra)]} />
+      <ViewObra slug={obra.slug} />
       <section className="on-dark bg-floresta text-pedra">
         <Container className="py-16 md:py-24">
-          <Breadcrumb
-            items={[
-              { label: globals.homeLabel, href: "/" },
-              { label: obrasPage.label, href: obrasPage.path },
-              { label: obra.titulo, href: `/obras/${obra.slug}` },
-            ]}
-          />
+          <Breadcrumb items={crumbs} />
           <h1 className="t-h1 mt-8 max-w-3xl text-pedra">{obra.titulo}</h1>
         </Container>
       </section>

@@ -1,4 +1,6 @@
 import type { PageContent } from "@/content/types";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { faqSchema, serviceSchema } from "@/lib/schema";
 import { Blocks } from "./Blocks";
 import { CtaFinal } from "./CtaFinal";
 import { PageHero } from "./PageHero";
@@ -6,8 +8,22 @@ import { Section } from "./Section";
 
 /** Página interna genérica, montada só a partir de PageContent. */
 export function ContentPage({ page }: { page: PageContent }) {
+  const faqIds = page.sections.flatMap((s) =>
+    s.blocks.flatMap((b) => (b.type === "faq" ? b.ids : [])),
+  );
   return (
     <>
+      {page.serviceType ? (
+        <JsonLd
+          data={serviceSchema({
+            name: page.h1,
+            serviceType: page.serviceType,
+            description: page.answer ?? page.description,
+            path: page.path,
+          })}
+        />
+      ) : null}
+      {faqIds.length ? <JsonLd data={faqSchema(faqIds)} /> : null}
       <PageHero label={page.label} path={page.path} h1={page.h1} answer={page.answer} />
       {page.sections.map((s, i) => (
         <Section key={s.id} id={s.id} heading={s.heading} tone={i % 2 === 0 ? "pedra" : "papel"}>

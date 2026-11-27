@@ -1,0 +1,35 @@
+name: IndexNow
+
+# Depois de um deploy de produção bem-sucedido na Vercel, avisa o IndexNow (Bing e outros).
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      all:
+        description: "Enviar todas as URLs do sitemap"
+        type: boolean
+        default: false
+
+jobs:
+  indexnow:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    env:
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+      NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Só depois do go-live (domínio final)
+        id: live
+        run: |
+          if [[ "$NEXT_PUBLIC_SITE_URL" == "https://www.prumopaisagismo.com.br" && -n "$INDEXNOW_KEY" ]]; then echo "ok=true" >> "$GITHUB_OUTPUT"; fi
+      - if: steps.live.outputs.ok == 'true'
+        run: pnpm indexnow ${{ inputs.all && '--all' || '' }}
