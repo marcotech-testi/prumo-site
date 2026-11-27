@@ -1,4 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import { CookieBanner } from "@/components/consent/CookieBanner";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+import { StickyCTA } from "@/components/layout/StickyCTA";
 import { siteConfig } from "@/content/site";
 import "./globals.css";
 
@@ -24,7 +28,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           crossOrigin="anonymous"
         />
       </head>
-      <body>{children}</body>
+      <body className="flex min-h-dvh flex-col">
+        <Header />
+        <main id="conteudo" tabIndex={-1} className="flex-1 outline-none">
+          {children}
+        </main>
+        <Footer />
+        <StickyCTA />
+        <CookieBanner />
+      </body>
     </html>
   );
 }

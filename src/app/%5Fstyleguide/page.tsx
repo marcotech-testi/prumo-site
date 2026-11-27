@@ -23,7 +23,7 @@ const swatches = [
 export default function Styleguide() {
   if (process.env.VERCEL_ENV === "production") notFound();
   return (
-    <main className="py-16">
+    <div className="py-16">
       <Container className="space-y-16">
         <section className="space-y-4">
           <p className="t-eyebrow text-agua-profunda">Styleguide · interno</p>
@@ -76,6 +76,6 @@ export default function Styleguide() {
           />
         </section>
       </Container>
-    </main>
+    </div>
   );
 }
