@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Attribution } from "@/components/analytics/Attribution";
+import { Analytics as ConsentAnalytics } from "@/components/consent/Analytics";
 import { CookieBanner } from "@/components/consent/CookieBanner";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <WebMcp obras={obrasResumo()} />
         {/* Sem cookies: sempre ligados (docs/04). GA4/Pixel só com consentimento (T10). */}
         <Analytics />
+        <ConsentAnalytics />
         <SpeedInsights />
       </body>
     </html>
