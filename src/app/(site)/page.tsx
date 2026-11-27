@@ -7,14 +7,16 @@ import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { ServiceCards } from "@/components/sections/ServiceCards";
 import { StepsTimeline } from "@/components/sections/StepsTimeline";
-import { hasPublishedObras } from "@/content/obras";
+import { getPublishedObras } from "@/content/obras";
+import { ObraCard } from "@/components/sections/ObraCard";
 import { home } from "@/content/pages";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata(home);
 
 export default function HomePage() {
-  const showObras = hasPublishedObras();
+  const obras = getPublishedObras().slice(0, 3);
+  const showObras = obras.length > 0;
   return (
     <>
       <Hero {...home.hero} whatsapp={home.whatsapp} />
@@ -48,9 +50,14 @@ export default function HomePage() {
 
       {showObras ? (
         <Section id="obras" heading={home.obras.heading} tone="papel">
+          <div className="grid gap-10 md:grid-cols-3">
+            {obras.map((o) => (
+              <ObraCard key={o.slug} obra={o} />
+            ))}
+          </div>
           <Link
             href={home.obras.moreLink.href}
-            className="text-floresta underline underline-offset-4"
+            className="t-expanded mt-10 inline-block font-medium text-floresta underline underline-offset-4"
           >
             {home.obras.moreLink.label}
           </Link>
