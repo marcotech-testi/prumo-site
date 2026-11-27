@@ -22,7 +22,7 @@ Fontes: MVP de 6 meses, business plan, pesquisa de presença em IAs, Manual da M
 - **Garantia, prazo, laudo de impermeabilização:** não prometer. O texto diz que prazo, garantia e reposição constam **por escrito na proposta**. (A garantia de 90 dias e o laudo estão só como hipótese a validar com o jurídico.)
 - **Sem depoimentos, sem avaliações, sem números de obras, sem nomes de clientes, sem selos de fornecedores.**
 - **Área de atuação:** "Curitiba e região metropolitana", com exemplos naturais no texto (São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo).
-- **Contato:** e-mail contato@prumopaisagismo.com.br; WhatsApp comercial ainda não existe (usar variável de ambiente, esconder botão se vazia; os materiais usam o exemplo (41) 9 0000-0000, **nunca publicar esse número**); Instagram/TikTok/YouTube `@prumopaisagismo` ainda não criados (links ocultos até `NEXT_PUBLIC_SOCIAL_LIVE=true`).
+- **Contato:** e-mail contato@prumopaisagismo.com.br; WhatsApp comercial **(41) 93618-6969**, ativo desde 27/11/2026 e atendido primeiro pela assistente de IA "Vera" (`docs/assistente-ia/`), que passa para a equipe (no site: variável `NEXT_PUBLIC_WHATSAPP=5541936186969`; o botão continua oculto se a variável estiver vazia; o exemplo antigo (41) 9 0000-0000 **nunca deve ser publicado**); Instagram/TikTok/YouTube `@prumopaisagismo` ainda não criados (links ocultos até `NEXT_PUBLIC_SOCIAL_LIVE=true`).
 - **Assinatura da marca "Verde no prumo":** em validação, não usar.
 - **Obras:** o site nasce com obras reais do parceiro. Sem obra autorizada, a seção some. O go-live exige ≥ 3 obras.
 
