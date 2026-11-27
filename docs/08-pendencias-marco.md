@@ -21,7 +21,8 @@ Marque cada item quando concluir. "Bloqueia go-live" = o site só vai ao ar com 
 - [ ] Publicar a imagem de assinatura de e-mail (já servida pelo site em `/assinatura/assinatura-logo-480px.png`).
 
 ## Conteúdo e dados
-- [ ] **WhatsApp comercial** (esposa define): número no formato `5541…` em `NEXT_PUBLIC_WHATSAPP`. Trocar também o exemplo (41) 9 0000-0000 no cartão, assinatura, timbrado, orçamento e apresentação. *Bloqueia go-live.*
+- [x] **WhatsApp comercial** definido e ativo: **(41) 93618-6969** (confirmado em 27/11/2026). O cartão, a apresentação, o modelo de orçamento e o manual da marca já trazem o número. O WhatsApp é atendido pela assistente de IA "Vera" (base de conhecimento em `docs/assistente-ia/`), que passa para a equipe quando necessário.
+- [ ] **WhatsApp no site**: definir `NEXT_PUBLIC_WHATSAPP=5541936186969` na Vercel (produção e preview). Sem a variável, os botões de WhatsApp continuam ocultos. *Bloqueia go-live.*
 - [ ] **≥ 3 obras reais do parceiro** com autorização de uso (cliente e parceiro): fotos (jardim inteiro, detalhe, escala, **irrigação**), bairro, metragem, espécies, tipo de irrigação, ano, prazo. Entregar em `src/content/obras/` + `public/obras/`. *Bloqueia go-live.*
 - [ ] **Razão social e CNPJ** que operam o site (`NEXT_PUBLIC_LEGAL_NAME`) e **revisão jurídica da `/privacidade`** (minuta). *Bloqueia go-live.*
 - [ ] **Parceiro de execução revisa** os trechos `REVISAR-PARCEIRO` (estrutura/drenagem, clima, umidade/impermeabilização, irrigação sem ponto de água) — lista no PR da T4. *Bloqueia go-live.*

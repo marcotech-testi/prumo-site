@@ -8,6 +8,9 @@ import { Header } from "@/components/layout/Header";
 import { StickyCTA } from "@/components/layout/StickyCTA";
 import { siteConfig } from "@/content/site";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { WebMcp } from "@/components/agents/WebMcp";
+import { obrasResumo } from "@/lib/agent-tools/obras-context";
+import { publicEnv } from "@/lib/env";
 import { businessSchema, websiteSchema } from "@/lib/schema";
 import { robotsMetadata, verificationMetadata } from "@/lib/seo";
 import "./globals.css";
@@ -37,6 +40,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        {publicEnv.webmcpOtToken ? (
+          <meta httpEquiv="origin-trial" content={publicEnv.webmcpOtToken} />
+        ) : null}
       </head>
       <body className="flex min-h-dvh flex-col">
         <JsonLd data={[businessSchema(), websiteSchema()]} />
@@ -48,6 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <StickyCTA />
         <CookieBanner />
         <Attribution />
+        <WebMcp obras={obrasResumo()} />
         {/* Sem cookies: sempre ligados (docs/04). GA4/Pixel só com consentimento (T10). */}
         <Analytics />
         <SpeedInsights />

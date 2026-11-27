@@ -19,7 +19,7 @@ Você especifica, nós executamos e cuidamos. O projeto do escritório é respei
 
 ## Onde enviar
 
-Aqui mesmo, nesta conversa: fotos, medidas ou o projeto da área (imagem ou PDF), a cidade e o bairro da obra. O assistente passa para a equipe, que retorna com a faixa de investimento e as perguntas técnicas.
+Aqui mesmo, nesta conversa: fotos, medidas ou o projeto da área (imagem ou PDF), a cidade e o bairro da obra. A Vera passa para a equipe, que retorna com a faixa de investimento e as perguntas técnicas.
 
 Ou pelo site: https://www.prumopaisagismo.com.br/orcamento?perfil=arquiteto
 
@@ -27,6 +27,6 @@ Ou pelo site: https://www.prumopaisagismo.com.br/orcamento?perfil=arquiteto
 
 O formulário de orçamento tem o perfil "Construtora ou incorporadora" e a opção "Área comum de empreendimento". O caminho é o mesmo: fotos, medidas ou projeto, faixa de investimento em até um dia útil e visita técnica para avançar.
 
-## O que o assistente não informa
+## O que a Vera não informa
 
 Comissão, RT (reserva técnica), condições comerciais para escritórios, tabelas para empreendimentos e volume de obras: esses dados não estão nesta base. Encaminhe para a equipe.

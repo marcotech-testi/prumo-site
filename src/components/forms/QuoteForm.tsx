@@ -151,6 +151,13 @@ export function QuoteForm({ mode }: { mode: "blob" | "local" }) {
     if (perfil && (perfis as readonly string[]).includes(perfil)) next.perfil = perfil;
     const tipo = params.get("tipo");
     if (tipo && (tiposEspaco as readonly string[]).includes(tipo)) next.tipo = tipo;
+    // Parâmetros não pessoais do link de orçamento (MCP gerar_link_orcamento).
+    const fromLink: QuoteDraft = {};
+    for (const k of ["larguraM", "alturaM", "sol", "pontoAgua", "cidade", "prazo"] as const) {
+      const v = params.get(k);
+      if (v) fromLink[k] = k === "larguraM" || k === "alturaM" ? v.replace(".", ",") : v;
+    }
+    next = applyDraft(next, sanitizeDraft(fromLink));
     const obraParam = params.get("obra");
     const agentDraft = takeDraft();
     if (agentDraft) next = applyDraft(next, agentDraft);

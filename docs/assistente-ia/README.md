@@ -4,9 +4,13 @@ Documentação para alimentar o assistente que responde dúvidas do público sob
 
 **Este README é interno. Não entregue ao assistente.** Entregue os arquivos `00` a `07`.
 
+## Nome
+
+A assistente se chama **Vera**: lembra "vertical" e "verdade", o que conversa com a voz honesta da marca. Ela se apresenta como assistente virtual, uma IA, já na primeira mensagem.
+
 ## Canal
 
-O assistente atende o WhatsApp oficial **(41) 93618-6969**: todo mundo que escreve para esse número conversa primeiro com ele. Por isso, ele:
+A assistente atende o WhatsApp oficial **(41) 93618-6969**: todo mundo que escreve para esse número conversa primeiro com ele. Por isso, ele:
 
 - nunca manda a pessoa "chamar no WhatsApp";
 - recebe o pedido de orçamento na própria conversa (fotos, medidas, luz, água, cidade e bairro, nome), pede o consentimento à pessoa e passa para a equipe;

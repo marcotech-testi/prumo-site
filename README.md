@@ -92,3 +92,17 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 const expected = "sha256=" + createHmac("sha256", process.env.QUOTE_WEBHOOK_SECRET).update(rawBody).digest("hex");
 const ok = timingSafeEqual(Buffer.from(expected), Buffer.from(req.headers["x-prumo-signature"]));
 ```
+
+## Agentes de IA (docs/09)
+Todo o texto mora em `src/content`. A partir dele saem o HTML, o Markdown, o JSON-LD, o `llms.txt` e as ferramentas de agentes (`src/lib/agent-tools/definitions.ts`, fonte única).
+
+- **Markdown:** `/{rota}.md`, `/index.md` ou `Accept: text/markdown` (rewrites em `next.config.ts`; gerador em `src/lib/markdown.ts`).
+- **WebMCP (navegador, experimental):** `src/components/agents/WebMcp.tsx` registra as ferramentas em `document.modelContext` (ou no `navigator.modelContext` de Chromes antigos), com detecção de recurso. Sem suporte, não faz nada. Para remover as ferramentas, aborta o `signal` usado no registro (especificação de 24/11/2026). `iniciar_pedido_orcamento` só grava um rascunho em `sessionStorage` e abre `/orcamento`; o envio, as fotos e o consentimento ficam sempre com a pessoa.
+- **MCP remoto (somente leitura):** `https://www.prumopaisagismo.com.br/mcp` (rewrite para `/api/mcp`, `mcp-handler` 2.x, sem estado). Ferramentas: `consultar_servicos`, `consultar_perguntas_frequentes`, `verificar_area_atendimento`, `consultar_como_pedir_orcamento`, `consultar_obras` (só com obras) e `gerar_link_orcamento` (sem dados pessoais).
+- **Teste de origem:** com `NEXT_PUBLIC_WEBMCP_OT_TOKEN`, o layout emite `<meta http-equiv="origin-trial">`.
+
+### Roteiro de teste manual
+1. Chrome com WebMCP habilitado (flag de teste do WebMCP em `chrome://flags`, ou o token do teste de origem no domínio) e a extensão "Model Context Tool Inspector".
+2. Abrir o site: o inspector lista 5 ferramentas (6 quando houver obras).
+3. Pedir a um agente de teste: "o que a Prumo faz?", "atende São José dos Pinhais?" e "prepare um pedido de orçamento para uma varanda de 3 × 2 m". O formulário deve abrir preenchido, sem fotos, com o consentimento desmarcado e sem envio.
+4. MCP remoto: `npx @modelcontextprotocol/inspector`, transporte Streamable HTTP, URL `https://…/mcp`. Listar as ferramentas e chamar cada uma.
