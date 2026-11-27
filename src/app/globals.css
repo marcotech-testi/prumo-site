@@ -1,1 +1,124 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Archivo";
+  src: url("/fonts/archivo-vf-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback métrico para reduzir CLS enquanto a Archivo carrega */
+@font-face {
+  font-family: "Archivo Fallback";
+  src: local("Arial");
+  size-adjust: 108%;
+  ascent-override: 81%;
+  descent-override: 19.5%;
+  line-gap-override: 0%;
+}
+
+@theme {
+  --color-floresta: #1e3227;
+  --color-pedra: #e9e6df;
+  --color-papel: #f4f2ee;
+  --color-basalto: #191b19;
+  --color-agua: #8fa6b2; /* SÓ sobre floresta ou basalto */
+  --color-agua-profunda: #3e5a68; /* texto secundário sobre pedra/papel */
+  --font-sans: "Archivo", "Archivo Fallback", ui-sans-serif, system-ui, sans-serif;
+  --radius-ui: 4px;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-stretch: 100%;
+  color: var(--color-basalto);
+  background: var(--color-pedra);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-pedra);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.t-expanded {
+  font-stretch: 125%;
+}
+
+.t-eyebrow {
+  font-stretch: 125%;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.t-h1 {
+  font-stretch: 125%;
+  font-weight: 500;
+  font-size: clamp(2.25rem, 5.2vw, 3.5rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.t-h2 {
+  font-stretch: 125%;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.t-h3 {
+  font-stretch: 125%;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.t-body {
+  max-width: 68ch;
+  text-wrap: pretty;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-agua-profunda);
+  outline-offset: 2px;
+}
+
+.on-dark :focus-visible {
+  outline-color: var(--color-agua);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 280ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
