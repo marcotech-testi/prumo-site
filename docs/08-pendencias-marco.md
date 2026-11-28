@@ -4,9 +4,9 @@ Marque cada item quando concluir. "Bloqueia go-live" = o site só vai ao ar com 
 
 ## Contas e chaves (criar e entregar como variáveis de ambiente na Vercel — nunca colar no chat nem no git)
 - [ ] **Vercel**: conta/time com plano que permita **uso comercial** (o plano gratuito é para uso não comercial; confirmar), projeto ligado ao repositório. *Bloqueia go-live.*
-- [ ] **Resend**: criar conta, verificar o domínio `prumopaisagismo.com.br` (adicionar os registros DNS que o Resend mostrar: SPF/DKIM), gerar `RESEND_API_KEY`. *Bloqueia go-live.*
-- [ ] **Cloudflare Turnstile**: criar widget para `www.prumopaisagismo.com.br` e para localhost/previews → `NEXT_PUBLIC_TURNSTILE_SITE_KEY` e `TURNSTILE_SECRET_KEY`. *Bloqueia go-live.*
-- [ ] **Vercel Blob**: criar o store no projeto (gera `BLOB_READ_WRITE_TOKEN`). *Bloqueia go-live.*
+- [x] **Resend**: criar conta, verificar o domínio `prumopaisagismo.com.br` (adicionar os registros DNS que o Resend mostrar: SPF/DKIM), gerar `RESEND_API_KEY`. *Bloqueia go-live.* — feito em 27/11/2026 (remetente `orcamento@`).
+- [x] **Cloudflare Turnstile**: criar widget para `www.prumopaisagismo.com.br` e para localhost/previews → `NEXT_PUBLIC_TURNSTILE_SITE_KEY` e `TURNSTILE_SECRET_KEY`. *Bloqueia go-live.*
+- [x] **Vercel Blob**: criar o store no projeto (stores novos usam OIDC: `BLOB_STORE_ID`, sem `BLOB_READ_WRITE_TOKEN`). *Bloqueia go-live.*
 - [ ] **GA4** (`NEXT_PUBLIC_GA_ID`) e **Meta Pixel** (`NEXT_PUBLIC_META_PIXEL_ID`), antes de ligar o tráfego pago.
 - [ ] **Google Search Console**: criar a propriedade de **domínio** `prumopaisagismo.com.br` e verificar por registro TXT no DNS (reserva: meta em `NEXT_PUBLIC_GSC_VERIFICATION`). No go-live: enviar `https://www.prumopaisagismo.com.br/sitemap.xml`, inspecionar e pedir indexação da home e de `/jardim-vertical`. *Bloqueia go-live.*
 - [ ] **Bing Webmaster Tools**: importar do Search Console ou verificar (`NEXT_PUBLIC_BING_VERIFICATION`); gerar uma chave **IndexNow** (qualquer string hexadecimal de 8–128 caracteres) → `INDEXNOW_KEY` na Vercel e no GitHub Actions.
@@ -16,13 +16,13 @@ Marque cada item quando concluir. "Bloqueia go-live" = o site só vai ao ar com 
 - [ ] **Firewall da Vercel**: regra de limite de taxa para `/mcp` e `/api/*` (ex.: 60 requisições/min por IP).
 
 ## Domínio e e-mail
-- [ ] **E-mail contato@**: configurar o MX no Registro.br (hoje o MX está nulo e o e-mail recusa mensagens). Até lá, definir `QUOTE_TO_EMAIL` com um e-mail que funcione. *Bloqueia go-live (os clientes vão escrever para esse endereço).*
-- [ ] **DNS do site** (só no go-live): `www` → CNAME para a Vercel; apex redireciona para `www` (o Claude Code entrega o roteiro na T12).
+- [x] **E-mail contato@**: configurar o MX no Registro.br (hoje o MX está nulo e o e-mail recusa mensagens). Até lá, definir `QUOTE_TO_EMAIL` com um e-mail que funcione. *Bloqueia go-live (os clientes vão escrever para esse endereço).*
+- [x] **DNS do site** (só no go-live): `www` → CNAME para a Vercel; apex redireciona para `www` (roteiro em `docs/10-go-live.md`; já aplicado em 27/11/2026).
 - [ ] Publicar a imagem de assinatura de e-mail (já servida pelo site em `/assinatura/assinatura-logo-480px.png`).
 
 ## Conteúdo e dados
 - [x] **WhatsApp comercial** definido e ativo: **(41) 93618-6969** (confirmado em 27/11/2026). O cartão, a apresentação, o modelo de orçamento e o manual da marca já trazem o número. O WhatsApp é atendido pela assistente de IA "Vera" (base de conhecimento em `docs/assistente-ia/`), que passa para a equipe quando necessário.
-- [ ] **WhatsApp no site**: definir `NEXT_PUBLIC_WHATSAPP=5541936186969` na Vercel (produção e preview). Sem a variável, os botões de WhatsApp continuam ocultos. *Bloqueia go-live.*
+- [x] **WhatsApp no site**: definir `NEXT_PUBLIC_WHATSAPP=5541936186969` na Vercel (produção e preview). Sem a variável, os botões de WhatsApp continuam ocultos. *Bloqueia go-live.* — feito em Production em 27/11/2026 (preview ainda sem).
 - [ ] **≥ 3 obras reais do parceiro** com autorização de uso (cliente e parceiro): fotos (jardim inteiro, detalhe, escala, **irrigação**), bairro, metragem, espécies, tipo de irrigação, ano, prazo. Entregar em `src/content/obras/` + `public/obras/`. *Bloqueia go-live.*
 - [ ] **Razão social e CNPJ** que operam o site (`NEXT_PUBLIC_LEGAL_NAME`) e **revisão jurídica da `/privacidade`** (minuta). *Bloqueia go-live.*
 - [ ] **Parceiro de execução revisa** os trechos `REVISAR-PARCEIRO` (estrutura/drenagem, clima, umidade/impermeabilização, irrigação sem ponto de água) — lista no PR da T4. *Bloqueia go-live.*
