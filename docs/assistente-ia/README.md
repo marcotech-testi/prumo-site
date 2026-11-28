@@ -10,7 +10,7 @@ A assistente se chama **Vera**: lembra "vertical" e "verdade", o que conversa co
 
 ## Canal
 
-A assistente atende o WhatsApp oficial **(41) 93618-6969**: todo mundo que escreve para esse número conversa primeiro com ele. Por isso, ele:
+A assistente atende o WhatsApp oficial **(41) 93618-6969**: todo mundo que escreve para esse número conversa primeiro com ela. Por isso, ela:
 
 - nunca manda a pessoa "chamar no WhatsApp";
 - recebe o pedido de orçamento na própria conversa (fotos, medidas, luz, água, cidade e bairro, nome), pede o consentimento à pessoa e passa para a equipe;
@@ -66,7 +66,7 @@ Não lidas: modelo financeiro (interno), resultados brutos das IAs e o PDF de pr
 
 ## Divergências entre documentos (decida e me avise se quiser mudar)
 
-1. **WhatsApp (resolvido).** O **(41) 93618-6969** está ativo para clientes, confirmado pelo Marco em 27/11/2026, e a base usa esse número. Falta acertar o site: `docs/08` ainda diz que o WhatsApp não existe, e a variável `NEXT_PUBLIC_WHATSAPP` na Vercel deve receber `5541936186969`.
+1. **WhatsApp (resolvido).** O **(41) 93618-6969** está ativo para clientes, confirmado pelo Marco em 27/11/2026, e a base usa esse número. `docs/00` e `docs/08` já registram isso. Falta só o site: a variável `NEXT_PUBLIC_WHATSAPP` na Vercel deve receber `5541936186969` (pendência no `docs/08`).
 2. **Paisagismo.** A apresentação lista "Paisagismo: projeto e execução de jardins, varandas e áreas externas" como serviço. O site e `docs/00` tratam como "sob consulta, caso a caso". A base segue o site.
 3. **Obras reais.** A apresentação diz "Mais obras em @prumopaisagismo", mas as redes ainda não existem. A base não indica perfis.
 
@@ -78,8 +78,8 @@ Escrito no tom da marca porque nenhum documento tinha esse texto. Revise antes d
 - as respostas padrão do `07`;
 - em `02`: as notas para o assistente e a seção "O que a Prumo não faz";
 - em `03`: "O que muda na prática" e as respostas a objeções (montadas a partir de frases do site);
-- em `04`: "Dicas para boas fotos", "O que vem na proposta" e "O que o assistente pode e não pode fazer";
-- em `06`: "Construtoras e incorporadoras" e "O que o assistente não informa".
+- em `04`: "Dicas para boas fotos", "O que vem na proposta" e "O que a Vera pode e não pode fazer";
+- em `06`: "Construtoras e incorporadoras" e "O que a Vera não informa".
 
 Adaptação do texto do site: em `01`, a área de atendimento inclui Fazenda Rio Grande, que está em `siteConfig.areaServed` mas não na FAQ 11.
 
