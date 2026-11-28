@@ -61,7 +61,7 @@ body {
 .t-h1 {
   font-stretch: 125%;
   font-weight: 500;
-  font-size: clamp(2.25rem, 5.2vw, 3.5rem);
+  font-size: clamp(2.25rem, 4.6vw, 3rem);
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -113,6 +113,17 @@ b {
 
 .rise {
   animation: rise 280ms ease-out both;
+}
+
+/* Água correndo nas linhas do esquema do sistema (SystemDiagram) */
+@keyframes flow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.flow {
+  animation: flow 1.8s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

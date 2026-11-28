@@ -16,7 +16,9 @@ export type Block =
   | { type: "faq"; ids: number[]; moreLink?: Link }
   /** Bloco de preço condicional: só renderiza se siteConfig.priceRange existir. */
   | { type: "price" }
-  | { type: "links"; items: Link[] };
+  | { type: "links"; items: Link[] }
+  /** Esquema ilustrativo do sistema (src/content/sistema.ts). */
+  | { type: "diagram" };
 
 /** Seção; sem `heading`, os blocos seguem a resposta direta sem título próprio. */
 export type Section = { id: string; heading?: string; blocks: Block[] };

@@ -22,6 +22,7 @@ export const irrigacao: PageContent = {
           // REVISAR-PARCEIRO: componentes da irrigação e abastecimento sem ponto de água
           text: "Um controlador programável liga a água em ciclos definidos. A água segue por tubulação até gotejadores, que distribuem o volume certo para cada trecho da parede. Filtro, controle de pressão e drenagem evitam entupimento e excesso de água. Quando não há ponto de água próximo, a solução de abastecimento é definida na visita técnica.",
         },
+        { type: "diagram" },
       ],
     },
     {

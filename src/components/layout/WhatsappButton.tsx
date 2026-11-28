@@ -12,6 +12,7 @@ type Props = {
   tone?: "light" | "dark";
   className?: string;
   message?: WhatsappMessageKey;
+  label?: string;
 };
 
 /** Botão de WhatsApp. Não renderiza nada sem número configurado. */
@@ -20,6 +21,7 @@ export function WhatsappButton({
   tone = "light",
   className = "",
   message,
+  label,
 }: Props) {
   const pathname = usePathname();
   const href = whatsappLink(message ?? whatsappKeyForPath(pathname));
@@ -32,7 +34,7 @@ export function WhatsappButton({
       data-event="click_whatsapp"
       className={buttonClass(variant, tone, className)}
     >
-      {globals.ctaWhatsapp}
+      {label ?? globals.ctaWhatsapp}
     </a>
   );
 }

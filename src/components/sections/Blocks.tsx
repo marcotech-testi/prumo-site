@@ -5,6 +5,7 @@ import { FaqList } from "./FaqList";
 import { Features } from "./Features";
 import { PriceBlock } from "./PriceBlock";
 import { StepsTimeline } from "./StepsTimeline";
+import { SystemDiagram } from "./SystemDiagram";
 
 /** Renderiza blocos de conteúdo de src/content. Nenhum texto próprio. */
 export function Blocks({
@@ -64,6 +65,8 @@ export function Blocks({
             );
           case "price":
             return <PriceBlock key={i} />;
+          case "diagram":
+            return <SystemDiagram key={i} className="pt-4" />;
           case "links":
             return (
               <ul key={i} className="flex flex-wrap gap-6">

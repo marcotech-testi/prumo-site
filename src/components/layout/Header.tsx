@@ -26,8 +26,10 @@ export function Header() {
         <nav aria-label={globals.mainNavLabel} className="hidden xl:block">
           <NavLinks items={items} />
         </nav>
-        <div className="hidden items-center gap-3 xl:flex">
-          <WhatsappButton variant="secondary" className="min-h-11 px-4 whitespace-nowrap" />
+        <div className="ml-auto hidden items-center gap-3 md:flex xl:ml-0">
+          <span className="hidden xl:contents">
+            <WhatsappButton variant="secondary" className="min-h-11 px-4 whitespace-nowrap" />
+          </span>
           <ButtonLink href="/orcamento" className="min-h-11 px-5 whitespace-nowrap">
             {globals.ctaPrimary}
           </ButtonLink>
