@@ -75,7 +75,7 @@ Não mexer no apex/www sem necessidade: qualquer troca de A/CNAME derruba o site
 - [ ] **Webhook** (se `QUOTE_WEBHOOK_URL`/`QUOTE_WEBHOOK_SECRET` estiverem definidos): o destino recebe o JSON assinado (`X-Prumo-Signature`).
 - [ ] **GA4/Pixel** (depois de definir os IDs): sem consentimento, nenhuma chamada a terceiros; com "Aceitar", `page_view`, `click_whatsapp` e `submit_quote` no DebugView/Test Events. Marcar `submit_quote` como evento-chave.
 - [ ] **Search Console** (propriedade já verificada): enviar `https://www.prumopaisagismo.com.br/sitemap.xml`; inspecionar a URL da home e de `/jardim-vertical` e pedir a indexação.
-- [ ] **Bing Webmaster**: importar do Search Console; gerar `INDEXNOW_KEY` (hex, 8–128 caracteres) → Vercel (Production) **e** GitHub (secret `INDEXNOW_KEY`, variável `NEXT_PUBLIC_SITE_URL`). O workflow `indexnow.yml` passa a avisar a cada deploy de produção.
+- [ ] **Bing Webmaster** (site já importado do Search Console em 28/11): enviar o sitemap no go-live; gerar `INDEXNOW_KEY` (hex, 8–128 caracteres) → Vercel (Production) **e** GitHub (secret `INDEXNOW_KEY`, variável `NEXT_PUBLIC_SITE_URL`). O workflow `indexnow.yml` passa a avisar a cada deploy de produção.
 - [ ] **Perfil da Empresa no Google**: atendimento em área (sem endereço), nome "Prumo Paisagismo" → `NEXT_PUBLIC_GBP_URL`.
 - [ ] **WebMCP**: registrar a origem em https://developer.chrome.com/origintrials → `NEXT_PUBLIC_WEBMCP_OT_TOKEN`; conferir a meta `origin-trial` no `<head>`.
 - [ ] **MCP remoto**: `https://www.prumopaisagismo.com.br/mcp` responde e lista as ferramentas somente leitura.
