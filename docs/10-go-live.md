@@ -44,7 +44,7 @@ Os dois marcadores `{{CONTROLADOR}}` somem quando `NEXT_PUBLIC_LEGAL_NAME` for d
 2. **Razão social + CNPJ** → `NEXT_PUBLIC_LEGAL_NAME` (Production) e **revisão jurídica da `/privacidade`** (inclui o trecho `privacidade.ts:52`).
 3. **Parceiro revisa os trechos `REVISAR-PARCEIRO`** (lista acima). Depois de aprovados, remover o comentário em cada um.
 4. **≥ 3 obras com autorização de uso** em `src/content/obras/` + `public/obras/`.
-5. **Search Console**: propriedade de domínio verificada por TXT no Registro.br. Hoje não existe TXT `google-site-verification`.
+5. ~~**Search Console**: propriedade de domínio verificada por TXT~~ — feito em 28/11/2026.
 
 ## 3. Roteiro de DNS (já aplicado; manter assim)
 | Host | Tipo | Valor |
@@ -56,7 +56,7 @@ Os dois marcadores `{{CONTROLADOR}}` somem quando `NEXT_PUBLIC_LEGAL_NAME` for d
 | `resend._domainkey` | TXT | chave DKIM do Resend |
 | `send` / `rsend` | CNAME | `send.forge.rmta.net` / `rsend-sae1.forge.rmta.net` |
 | `_dmarc` | TXT | `v=DMARC1; p=none;` (subir para `p=quarantine` depois de algumas semanas de relatórios limpos) |
-| `@` | TXT | **a adicionar**: `google-site-verification=…` (Search Console) |
+| `@` | TXT | `google-site-verification=…` (Search Console; não remover) |
 
 Não mexer no apex/www sem necessidade: qualquer troca de A/CNAME derruba o site.
 
@@ -74,7 +74,7 @@ Não mexer no apex/www sem necessidade: qualquer troca de A/CNAME derruba o site
 - [ ] **Pedido real** em `/orcamento` (foto + seu próprio e-mail no campo opcional): tela "Pedido recebido"; e-mail interno em `contato@`; e-mail de confirmação na sua caixa; ver *Emails* no Resend.
 - [ ] **Webhook** (se `QUOTE_WEBHOOK_URL`/`QUOTE_WEBHOOK_SECRET` estiverem definidos): o destino recebe o JSON assinado (`X-Prumo-Signature`).
 - [ ] **GA4/Pixel** (depois de definir os IDs): sem consentimento, nenhuma chamada a terceiros; com "Aceitar", `page_view`, `click_whatsapp` e `submit_quote` no DebugView/Test Events. Marcar `submit_quote` como evento-chave.
-- [ ] **Search Console**: confirmar a propriedade de domínio; enviar `https://www.prumopaisagismo.com.br/sitemap.xml`; inspecionar a URL da home e de `/jardim-vertical` e pedir a indexação.
+- [ ] **Search Console** (propriedade já verificada): enviar `https://www.prumopaisagismo.com.br/sitemap.xml`; inspecionar a URL da home e de `/jardim-vertical` e pedir a indexação.
 - [ ] **Bing Webmaster**: importar do Search Console; gerar `INDEXNOW_KEY` (hex, 8–128 caracteres) → Vercel (Production) **e** GitHub (secret `INDEXNOW_KEY`, variável `NEXT_PUBLIC_SITE_URL`). O workflow `indexnow.yml` passa a avisar a cada deploy de produção.
 - [ ] **Perfil da Empresa no Google**: atendimento em área (sem endereço), nome "Prumo Paisagismo" → `NEXT_PUBLIC_GBP_URL`.
 - [ ] **WebMCP**: registrar a origem em https://developer.chrome.com/origintrials → `NEXT_PUBLIC_WEBMCP_OT_TOKEN`; conferir a meta `origin-trial` no `<head>`.
