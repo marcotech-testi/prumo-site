@@ -31,7 +31,7 @@ Parede verde morre quando a irrigação é improvisada e ninguém cuida depois. 
 
 **Serviços — H2:** O que fazemos
 1. **Jardim vertical** — Paredes e fachadas verdes, internas ou externas, com espécies escolhidas para a luz de cada lugar. → /jardim-vertical
-2. **Irrigação automatizada e paisagismo** — Gotejamento com controlador programável: a água certa, na hora certa, sem depender de ninguém. → /irrigacao-automatizada-e-paisagismo
+2. **Irrigação automatizada e paisagismo** — Gotejamento com controlador programável: a água certa, na hora certa, sem depender de ninguém. Paisagismo de varandas e áreas externas, sob consulta. → /irrigacao-automatizada-e-paisagismo
 3. **Manutenção** — Visitas técnicas periódicas para o jardim seguir saudável. → /manutencao-de-jardim-vertical
 
 **Por que a Prumo — H2:** Por que a Prumo
@@ -128,6 +128,7 @@ O plano mensal é combinado na proposta da obra. A frequência das visitas e o i
 - **Especificação** — Apoio técnico na escolha de espécies, estrutura e irrigação.
 - **Execução** — Equipe com experiência em obras de construtoras e incorporadoras.
 - **Pós-obra** — Plano de manutenção para o cliente final, com registro das visitas.
+**H2 Ficha técnica do sistema** (SpecSheet + esquema ilustrativo; botão "Imprimir ou salvar em PDF"; REVISAR-PARCEIRO) — Sistema: Jardim vertical natural com irrigação automatizada por gotejamento. · Irrigação: Controlador programável, tubulação, gotejadores, filtro e controle de pressão. · Estrutura, módulo e drenagem: Variam conforme a parede e são definidos na visita técnica. · Espécies: Escolhidas para a luz de cada parede. · Ponto de água: Avaliado pelas fotos e na visita; sem ponto próximo, a solução de abastecimento é definida na visita técnica. · Proposta: Por escrito, com espécies, irrigação, prazo e investimento. · Prazo, garantia e reposição: Constam por escrito na proposta. · Pós-obra: Plano de manutenção para o cliente final, com registro das visitas.
 **H2 Como começamos** — 1. Você envia fotos, medidas ou o projeto da área. 2. Retornamos com uma faixa de investimento e as perguntas técnicas, em até um dia útil. 3. Fazemos a visita técnica, com o cliente quando fizer sentido. 4. A proposta segue por escrito, com espécies, irrigação, prazo e investimento.
 **CTA:** Enviar um projeto → `/orcamento?perfil=arquiteto`
 
@@ -169,7 +170,7 @@ O plano mensal é combinado na proposta da obra. A frequência das visitas e o i
 8. **Quanto tempo leva a instalação?** — Depende do tamanho e da complexidade da parede. O prazo de execução consta por escrito na proposta.
 9. **E se uma planta morrer? Existe garantia?** — O prazo de garantia e as regras de reposição de plantas constam por escrito na proposta. A manutenção regular reduz o risco, porque o cuidado começa antes de a planta sofrer.
 10. **Como funciona o orçamento?** — Você envia fotos ou um vídeo da parede e as medidas aproximadas, pelo site ou pelo WhatsApp. Retornamos com uma faixa de investimento por m² em até um dia útil. A visita técnica é agendada para quem decide avançar, e a proposta final segue por escrito.
-11. **Quais cidades vocês atendem?** — Curitiba e região metropolitana, como São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo. Se a sua cidade não está na lista, mande o pedido: avaliamos caso a caso.
+11. **Quais cidades vocês atendem?** — Curitiba e região metropolitana, como São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo e Fazenda Rio Grande. Se a sua cidade não está na lista, mande o pedido: avaliamos caso a caso.
 12. **Como escolher uma empresa de jardim vertical?** — Compare propostas com o mesmo escopo e peça: visita técnica antes do orçamento fechado; descrição do sistema de irrigação e da drenagem; espécies indicadas para a luz da sua parede; garantia e reposição de plantas por escrito; plano de manutenção; e obras reais com bairro e metragem. Desconfie de promessa de jardim que não dá trabalho nenhum.
 
 ---

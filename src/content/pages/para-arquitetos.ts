@@ -36,6 +36,52 @@ export const paraArquitetos: PageContent = {
       ],
     },
     {
+      id: "ficha-tecnica",
+      heading: "Ficha técnica do sistema",
+      blocks: [
+        {
+          type: "specsheet",
+          caption: "Ficha técnica do sistema Prumo",
+          printLabel: "Imprimir ou salvar em PDF",
+          // REVISAR-PARCEIRO: ficha técnica (componentes da irrigação, estrutura, módulo e drenagem)
+          rows: [
+            {
+              label: "Sistema",
+              value: "Jardim vertical natural com irrigação automatizada por gotejamento.",
+            },
+            {
+              label: "Irrigação",
+              value:
+                "Controlador programável, tubulação, gotejadores, filtro e controle de pressão.",
+            },
+            {
+              label: "Estrutura, módulo e drenagem",
+              value: "Variam conforme a parede e são definidos na visita técnica.",
+            },
+            { label: "Espécies", value: "Escolhidas para a luz de cada parede." },
+            {
+              label: "Ponto de água",
+              value:
+                "Avaliado pelas fotos e na visita; sem ponto próximo, a solução de abastecimento é definida na visita técnica.",
+            },
+            {
+              label: "Proposta",
+              value: "Por escrito, com espécies, irrigação, prazo e investimento.",
+            },
+            {
+              label: "Prazo, garantia e reposição",
+              value: "Constam por escrito na proposta.",
+            },
+            {
+              label: "Pós-obra",
+              value: "Plano de manutenção para o cliente final, com registro das visitas.",
+            },
+          ],
+        },
+        { type: "diagram" },
+      ],
+    },
+    {
       id: "como-comecamos",
       heading: "Como começamos",
       blocks: [

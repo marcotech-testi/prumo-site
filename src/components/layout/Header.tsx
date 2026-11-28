@@ -12,7 +12,7 @@ import { WhatsappButton } from "./WhatsappButton";
 export function Header() {
   const items = visibleNav(mainNav, hasPublishedObras());
   return (
-    <header className="sticky top-0 z-40 border-b border-basalto/15 bg-pedra">
+    <header className="sticky top-0 z-40 border-b border-basalto/15 bg-pedra print:hidden">
       <a
         href="#conteudo"
         className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-floresta focus:px-4 focus:py-2 focus:text-pedra"
@@ -26,8 +26,10 @@ export function Header() {
         <nav aria-label={globals.mainNavLabel} className="hidden xl:block">
           <NavLinks items={items} />
         </nav>
-        <div className="hidden items-center gap-3 xl:flex">
-          <WhatsappButton variant="secondary" className="min-h-11 px-4 whitespace-nowrap" />
+        <div className="ml-auto hidden items-center gap-3 md:flex xl:ml-0">
+          <span className="hidden xl:contents">
+            <WhatsappButton variant="secondary" className="min-h-11 px-4 whitespace-nowrap" />
+          </span>
           <ButtonLink href="/orcamento" className="min-h-11 px-5 whitespace-nowrap">
             {globals.ctaPrimary}
           </ButtonLink>

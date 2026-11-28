@@ -3,6 +3,9 @@ export const globals = {
   descriptor: "Jardins verticais e paisagismo com irrigação automatizada | Curitiba",
   ctaPrimary: "Pedir orçamento",
   ctaWhatsapp: "Falar no WhatsApp",
+  /** Rótulos curtos da barra fixa do mobile (cabem em uma linha a 360 px). */
+  ctaPrimaryShort: "Orçamento",
+  ctaWhatsappShort: "WhatsApp",
   quoteMicrocopy:
     "Envie fotos e medidas da parede. Retornamos com uma faixa de investimento em até um dia útil.",
   menuOpen: "Menu",

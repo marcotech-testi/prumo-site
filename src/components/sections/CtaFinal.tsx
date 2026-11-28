@@ -8,7 +8,7 @@ export function CtaFinal({ cta }: { cta: Cta }) {
   return (
     <section
       aria-labelledby="cta-final-titulo"
-      className="on-dark border-b border-agua/30 bg-floresta py-20 text-pedra md:py-28"
+      className="on-dark border-b border-agua/30 bg-floresta py-20 text-pedra md:py-28 print:hidden"
     >
       <Container>
         <h2 id="cta-final-titulo" className="t-h2 text-pedra">

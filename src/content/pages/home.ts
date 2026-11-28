@@ -1,6 +1,13 @@
 import { defaultCta } from "./cta";
 
 /** Home `/` (docs/07). */
+type WhyItem = { title: string; text: string; requiresObras?: boolean };
+
+/** Itens de "Por que a Prumo" visíveis conforme haja obra publicada. */
+export function whyItems(hasObras: boolean): WhyItem[] {
+  return (home.why.items as readonly WhyItem[]).filter((i) => hasObras || !i.requiresObras);
+}
+
 export const home = {
   path: "/",
   label: "Início",
@@ -40,6 +47,8 @@ export const home = {
       {
         title: "Obras reais.",
         text: "Mostramos trabalhos executados, com bairro e metragem. Sem imagem de catálogo e sem render.",
+        /** Só aparece quando houver obra publicada: sem obra, a promessa ficaria sem prova. */
+        requiresObras: true,
       },
     ],
   },

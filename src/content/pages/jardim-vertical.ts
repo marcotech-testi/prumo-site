@@ -32,6 +32,7 @@ export const jardimVertical: PageContent = {
           // REVISAR-PARCEIRO: estrutura, módulo e drenagem
           text: "Uma estrutura fixada na parede recebe as plantas. A irrigação é por gotejamento, com controlador programável: a água certa, na hora certa, sem depender de ninguém. A estrutura, o tipo de módulo e a drenagem variam conforme a parede e são definidos na visita técnica.",
         },
+        { type: "diagram" },
       ],
     },
     {

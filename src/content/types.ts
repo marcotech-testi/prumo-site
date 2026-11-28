@@ -16,7 +16,16 @@ export type Block =
   | { type: "faq"; ids: number[]; moreLink?: Link }
   /** Bloco de preço condicional: só renderiza se siteConfig.priceRange existir. */
   | { type: "price" }
-  | { type: "links"; items: Link[] };
+  | { type: "links"; items: Link[] }
+  /** Esquema ilustrativo do sistema (src/content/sistema.ts). */
+  | { type: "diagram" }
+  /** Ficha técnica (rótulo + valor) com botão de imprimir/salvar em PDF. */
+  | {
+      type: "specsheet";
+      caption: string;
+      printLabel: string;
+      rows: { label: string; value: string }[];
+    };
 
 /** Seção; sem `heading`, os blocos seguem a resposta direta sem título próprio. */
 export type Section = { id: string; heading?: string; blocks: Block[] };

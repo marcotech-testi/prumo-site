@@ -7,9 +7,11 @@ import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { ServiceCards } from "@/components/sections/ServiceCards";
 import { StepsTimeline } from "@/components/sections/StepsTimeline";
+import { SystemDiagram } from "@/components/sections/SystemDiagram";
 import { getPublishedObras } from "@/content/obras";
 import { ObraCard } from "@/components/sections/ObraCard";
 import { home } from "@/content/pages";
+import { whyItems } from "@/content/pages/home";
 import { pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqSchema } from "@/lib/schema";
@@ -39,16 +41,26 @@ export default function HomePage() {
         </Container>
       </div>
 
-      <Section id="resposta" heading={home.answer.heading} tone="pedra">
-        <p className="t-body text-lg">{home.answer.text}</p>
-      </Section>
+      <section id="resposta" aria-labelledby="resposta-titulo" className="bg-pedra py-20 md:py-28">
+        <Container>
+          <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:sticky lg:top-28 lg:col-span-5">
+              <h2 id="resposta-titulo" className="t-h2 text-floresta">
+                {home.answer.heading}
+              </h2>
+              <p className="t-body mt-8 text-lg">{home.answer.text}</p>
+            </div>
+            <SystemDiagram className="lg:col-span-7" />
+          </div>
+        </Container>
+      </section>
 
       <Section id="servicos" heading={home.services.heading} tone="papel">
         <ServiceCards />
       </Section>
 
       <Section id="por-que" heading={home.why.heading} tone="pedra">
-        <Features items={[...home.why.items]} />
+        <Features items={whyItems(showObras)} />
       </Section>
 
       {showObras ? (

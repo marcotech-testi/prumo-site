@@ -17,7 +17,7 @@ type Props = {
 /** Hero da home (Floresta, tipográfico, sem foto). */
 export function Hero({ eyebrow, h1, subtitle, primary, microcopy, whatsapp }: Props) {
   return (
-    <section className="on-dark relative overflow-hidden bg-floresta text-pedra">
+    <section data-hero className="on-dark relative overflow-hidden bg-floresta text-pedra">
       <HeroDecor />
       <Container className="relative py-24 md:py-36">
         <div className="max-w-3xl">

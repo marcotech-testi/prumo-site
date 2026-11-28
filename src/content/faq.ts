@@ -68,7 +68,7 @@ export const faq: FaqItem[] = [
     id: 11,
     question: "Quais cidades vocês atendem?",
     answer:
-      "Curitiba e região metropolitana, como São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo. Se a sua cidade não está na lista, mande o pedido: avaliamos caso a caso.",
+      "Curitiba e região metropolitana, como São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo e Fazenda Rio Grande. Se a sua cidade não está na lista, mande o pedido: avaliamos caso a caso.",
   },
   {
     id: 12,

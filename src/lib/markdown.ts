@@ -4,9 +4,11 @@ import { getObra, getPublishedObras } from "@/content/obras";
 import { contentPages, home } from "@/content/pages";
 import { orcamento } from "@/content/pages/orcamento";
 import { formatM2, obraSpecRows, obrasPage } from "@/content/pages/obras";
+import { whyItems } from "@/content/pages/home";
 import { privacidade, privacidadeSections } from "@/content/pages/privacidade";
 import { priceText, servicos } from "@/content/servicos";
 import { siteConfig } from "@/content/site";
+import { sistema } from "@/content/sistema";
 import { steps, stepsNote } from "@/content/steps";
 import type { Block } from "@/content/types";
 import { absoluteUrl } from "./seo";
@@ -39,6 +41,10 @@ function blockMd(b: Block): string {
         : "";
     case "links":
       return b.items.map((l) => `- [${l.label}](${absoluteUrl(l.href)})`).join("\n");
+    case "specsheet":
+      return b.rows.map((r) => `- **${r.label}:** ${r.value}`).join("\n");
+    case "diagram":
+      return `${sistema.title}:\n\n${sistema.parts.map((p) => `${p.n}. ${p.label}`).join("\n")}\n\n${sistema.caption}`;
   }
 }
 
@@ -74,7 +80,9 @@ function homeMd() {
     home.hero.microcopy,
     `## ${home.answer.heading}\n\n${home.answer.text}`,
     `## ${home.services.heading}\n\n${servicos.map((s) => `- [${s.title}](${absoluteUrl(s.href)}): ${s.text}`).join("\n")}`,
-    `## ${home.why.heading}\n\n${home.why.items.map((i) => `- **${i.title}** ${i.text}`).join("\n")}`,
+    `## ${home.why.heading}\n\n${whyItems(getPublishedObras().length > 0)
+      .map((i) => `- **${i.title}** ${i.text}`)
+      .join("\n")}`,
     `## ${home.steps.heading}\n\n${stepsMd()}`,
     `## ${home.architects.heading}\n\n${home.architects.text} [${home.architects.link.label}](${absoluteUrl(home.architects.link.href)})`,
     `## ${home.faq.heading}\n\n${faqMd([...home.faq.ids])}`,

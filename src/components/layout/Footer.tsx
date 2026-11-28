@@ -19,7 +19,7 @@ export function Footer() {
   const hasObras = hasPublishedObras();
   const wa = whatsappLink("geral");
   return (
-    <footer className="on-dark bg-floresta pt-20 pb-28 text-pedra md:pb-12">
+    <footer className="on-dark bg-floresta pt-20 pb-28 text-pedra md:pb-12 print:hidden">
       <Container>
         <div className="grid gap-12 border-b border-agua/30 pb-12 md:grid-cols-12">
           <div className="md:col-span-4">
@@ -49,12 +49,11 @@ export function Footer() {
             <h2 className="t-eyebrow text-agua">{footerContactTitle}</h2>
             <ul className="mt-4 space-y-3">
               <li>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  data-event="click_email"
-                  className={`${linkCls} break-all`}
-                >
-                  {siteConfig.email}
+                <a href={`mailto:${siteConfig.email}`} data-event="click_email" className={linkCls}>
+                  {/* Quebra depois do @, nunca no meio da palavra */}
+                  {siteConfig.email.split("@")[0]}@
+                  <wbr />
+                  {siteConfig.email.split("@")[1]}
                 </a>
               </li>
               {wa ? (
