@@ -12,7 +12,7 @@ import { WhatsappButton } from "./WhatsappButton";
 export function Header() {
   const items = visibleNav(mainNav, hasPublishedObras());
   return (
-    <header className="sticky top-0 z-40 border-b border-basalto/15 bg-pedra">
+    <header className="sticky top-0 z-40 border-b border-basalto/15 bg-pedra print:hidden">
       <a
         href="#conteudo"
         className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-floresta focus:px-4 focus:py-2 focus:text-pedra"

@@ -19,7 +19,7 @@ export function Footer() {
   const hasObras = hasPublishedObras();
   const wa = whatsappLink("geral");
   return (
-    <footer className="on-dark bg-floresta pt-20 pb-28 text-pedra md:pb-12">
+    <footer className="on-dark bg-floresta pt-20 pb-28 text-pedra md:pb-12 print:hidden">
       <Container>
         <div className="grid gap-12 border-b border-agua/30 pb-12 md:grid-cols-12">
           <div className="md:col-span-4">

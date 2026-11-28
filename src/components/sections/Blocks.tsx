@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Block } from "@/content/types";
-import { SpecList } from "@/components/ui/SpecSheet";
+import { SpecList, SpecSheet } from "@/components/ui/SpecSheet";
+import { PrintButton } from "@/components/ui/PrintButton";
 import { FaqList } from "./FaqList";
 import { Features } from "./Features";
 import { PriceBlock } from "./PriceBlock";
@@ -65,6 +66,13 @@ export function Blocks({
             );
           case "price":
             return <PriceBlock key={i} />;
+          case "specsheet":
+            return (
+              <div key={i} data-print-area>
+                <SpecSheet rows={b.rows} caption={b.caption} />
+                <PrintButton label={b.printLabel} />
+              </div>
+            );
           case "diagram":
             return <SystemDiagram key={i} className="pt-4" />;
           case "links":

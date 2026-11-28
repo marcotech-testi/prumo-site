@@ -128,6 +128,7 @@ O plano mensal é combinado na proposta da obra. A frequência das visitas e o i
 - **Especificação** — Apoio técnico na escolha de espécies, estrutura e irrigação.
 - **Execução** — Equipe com experiência em obras de construtoras e incorporadoras.
 - **Pós-obra** — Plano de manutenção para o cliente final, com registro das visitas.
+**H2 Ficha técnica do sistema** (SpecSheet + esquema ilustrativo; botão "Imprimir ou salvar em PDF"; REVISAR-PARCEIRO) — Sistema: Jardim vertical natural com irrigação automatizada por gotejamento. · Irrigação: Controlador programável, tubulação, gotejadores, filtro e controle de pressão. · Estrutura, módulo e drenagem: Variam conforme a parede e são definidos na visita técnica. · Espécies: Escolhidas para a luz de cada parede. · Ponto de água: Avaliado pelas fotos e na visita; sem ponto próximo, a solução de abastecimento é definida na visita técnica. · Proposta: Por escrito, com espécies, irrigação, prazo e investimento. · Prazo, garantia e reposição: Constam por escrito na proposta. · Pós-obra: Plano de manutenção para o cliente final, com registro das visitas.
 **H2 Como começamos** — 1. Você envia fotos, medidas ou o projeto da área. 2. Retornamos com uma faixa de investimento e as perguntas técnicas, em até um dia útil. 3. Fazemos a visita técnica, com o cliente quando fizer sentido. 4. A proposta segue por escrito, com espécies, irrigação, prazo e investimento.
 **CTA:** Enviar um projeto → `/orcamento?perfil=arquiteto`
 

@@ -37,7 +37,7 @@ export function CookieBanner() {
     <section
       ref={regionRef}
       aria-label={consentContent.label}
-      className="fixed right-4 bottom-24 left-4 z-50 max-w-md rounded-[var(--radius-ui)] border border-basalto/15 bg-papel p-5 md:right-auto md:bottom-4 md:left-4 md:max-w-sm md:p-4"
+      className="fixed right-4 bottom-24 left-4 z-50 max-w-md rounded-[var(--radius-ui)] border border-basalto/15 bg-papel p-5 md:right-auto md:bottom-4 md:left-4 md:max-w-sm md:p-4 print:hidden"
     >
       <p className="text-[0.9375rem] leading-normal md:text-sm">{consentContent.text}</p>
       <div className="mt-4 grid grid-cols-2 gap-3 md:mt-3">

@@ -35,7 +35,7 @@ export function StickyCTA() {
       data-sticky-cta
       aria-hidden={!visible}
       inert={!visible}
-      className={`fixed inset-x-0 bottom-0 z-30 border-t border-basalto/15 bg-pedra px-4 py-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${visible ? "translate-y-0" : "translate-y-full"}`}
+      className={`fixed inset-x-0 bottom-0 z-30 border-t border-basalto/15 bg-pedra px-4 py-3 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden print:hidden ${visible ? "translate-y-0" : "translate-y-full"}`}
     >
       <div className="flex gap-3 [&>*]:flex-1">
         <ButtonLink href="/orcamento" className="px-3 whitespace-nowrap">

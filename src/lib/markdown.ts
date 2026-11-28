@@ -41,6 +41,8 @@ function blockMd(b: Block): string {
         : "";
     case "links":
       return b.items.map((l) => `- [${l.label}](${absoluteUrl(l.href)})`).join("\n");
+    case "specsheet":
+      return b.rows.map((r) => `- **${r.label}:** ${r.value}`).join("\n");
     case "diagram":
       return `${sistema.title}:\n\n${sistema.parts.map((p) => `${p.n}. ${p.label}`).join("\n")}\n\n${sistema.caption}`;
   }
