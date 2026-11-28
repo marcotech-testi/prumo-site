@@ -19,6 +19,8 @@ type Props = {
   decor?: boolean;
   /** Mostra "Pedir orçamento" (e WhatsApp) logo abaixo da resposta direta. */
   cta?: boolean;
+  /** Botão principal do topo; padrão "Pedir orçamento". */
+  primary?: { label: string; href: string };
   whatsapp?: WhatsappMessageKey;
 };
 
@@ -31,6 +33,7 @@ export function PageHero({
   crumbs,
   decor = true,
   cta = false,
+  primary,
   whatsapp,
 }: Props) {
   const trail = crumbs ?? breadcrumbsFor({ label: label ?? h1, href: path ?? "/" });
@@ -45,8 +48,8 @@ export function PageHero({
           {answer ? <p className="t-body mt-6 text-lg text-pedra/85 md:text-xl">{answer}</p> : null}
           {cta ? (
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/orcamento" tone="dark">
-                {globals.ctaPrimary}
+              <ButtonLink href={primary?.href ?? "/orcamento"} tone="dark">
+                {primary?.label ?? globals.ctaPrimary}
               </ButtonLink>
               {whatsapp ? (
                 <WhatsappButton variant="secondary" tone="dark" message={whatsapp} />

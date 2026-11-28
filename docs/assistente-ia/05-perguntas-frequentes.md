@@ -44,7 +44,7 @@ Você envia fotos ou um vídeo da parede e as medidas aproximadas, pelo site ou 
 
 ## 11. Quais cidades vocês atendem?
 
-Curitiba e região metropolitana, como São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo. Se a sua cidade não está na lista, mande o pedido: avaliamos caso a caso.
+Curitiba e região metropolitana, como São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo e Fazenda Rio Grande. Se a sua cidade não está na lista, mande o pedido: avaliamos caso a caso.
 
 ## 12. Como escolher uma empresa de jardim vertical?
 

@@ -31,7 +31,7 @@ Parede verde morre quando a irrigação é improvisada e ninguém cuida depois. 
 
 **Serviços — H2:** O que fazemos
 1. **Jardim vertical** — Paredes e fachadas verdes, internas ou externas, com espécies escolhidas para a luz de cada lugar. → /jardim-vertical
-2. **Irrigação automatizada e paisagismo** — Gotejamento com controlador programável: a água certa, na hora certa, sem depender de ninguém. → /irrigacao-automatizada-e-paisagismo
+2. **Irrigação automatizada e paisagismo** — Gotejamento com controlador programável: a água certa, na hora certa, sem depender de ninguém. Paisagismo de varandas e áreas externas, sob consulta. → /irrigacao-automatizada-e-paisagismo
 3. **Manutenção** — Visitas técnicas periódicas para o jardim seguir saudável. → /manutencao-de-jardim-vertical
 
 **Por que a Prumo — H2:** Por que a Prumo
@@ -169,7 +169,7 @@ O plano mensal é combinado na proposta da obra. A frequência das visitas e o i
 8. **Quanto tempo leva a instalação?** — Depende do tamanho e da complexidade da parede. O prazo de execução consta por escrito na proposta.
 9. **E se uma planta morrer? Existe garantia?** — O prazo de garantia e as regras de reposição de plantas constam por escrito na proposta. A manutenção regular reduz o risco, porque o cuidado começa antes de a planta sofrer.
 10. **Como funciona o orçamento?** — Você envia fotos ou um vídeo da parede e as medidas aproximadas, pelo site ou pelo WhatsApp. Retornamos com uma faixa de investimento por m² em até um dia útil. A visita técnica é agendada para quem decide avançar, e a proposta final segue por escrito.
-11. **Quais cidades vocês atendem?** — Curitiba e região metropolitana, como São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo. Se a sua cidade não está na lista, mande o pedido: avaliamos caso a caso.
+11. **Quais cidades vocês atendem?** — Curitiba e região metropolitana, como São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo e Fazenda Rio Grande. Se a sua cidade não está na lista, mande o pedido: avaliamos caso a caso.
 12. **Como escolher uma empresa de jardim vertical?** — Compare propostas com o mesmo escopo e peça: visita técnica antes do orçamento fechado; descrição do sistema de irrigação e da drenagem; espécies indicadas para a luz da sua parede; garantia e reposição de plantas por escrito; plano de manutenção; e obras reais com bairro e metragem. Desconfie de promessa de jardim que não dá trabalho nenhum.
 
 ---

@@ -7,7 +7,7 @@ export const servicos = [
   },
   {
     title: "Irrigação automatizada e paisagismo",
-    text: "Gotejamento com controlador programável: a água certa, na hora certa, sem depender de ninguém.",
+    text: "Gotejamento com controlador programável: a água certa, na hora certa, sem depender de ninguém. Paisagismo de varandas e áreas externas, sob consulta.",
     href: "/irrigacao-automatizada-e-paisagismo",
   },
   {

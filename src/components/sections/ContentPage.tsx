@@ -98,6 +98,7 @@ export function ContentPage({ page, heroCta = true }: { page: PageContent; heroC
         answer={page.answer}
         whatsapp={heroCta ? page.whatsapp : undefined}
         cta={heroCta}
+        primary={page.cta.primary}
       />
       {groups.map((g, gi) =>
         g.wide ? (
